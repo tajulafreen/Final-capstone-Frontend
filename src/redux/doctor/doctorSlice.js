@@ -47,7 +47,18 @@ const doctorSlice = createSlice({
         state.status = 'succeeded';
         state.doctors.push(action.payload);
       })
-     
+      .addCase(fetchDoctors.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.doctors = action.payload;
+      })
+      .addCase(fetchDoctorById.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.doctors = [action.payload];
+      })
+      .addCase(deleteDoctor.fulfilled, (state, action) => {
+        state.status = 'succeeded';
+        state.doctors = state.doctors.filter((doctor) => doctor.id !== action.payload);
+      })
 });
 
 export const selectDoctors = (state) => state.doctor.doctors;
