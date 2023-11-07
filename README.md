@@ -110,7 +110,7 @@ Collaborators.
 
 ## 👥 Author <a name="authors"></a>
 
-👤 **Abel Morara**
+👤 **Tajul Afreen**
 - GitHub: [@githubhandle](https://github.com/tajulafreen)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/tajul-afreen/)
  
