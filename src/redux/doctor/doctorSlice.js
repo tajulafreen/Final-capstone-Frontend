@@ -59,6 +59,20 @@ const doctorSlice = createSlice({
         state.status = 'succeeded';
         state.doctors = state.doctors.filter((doctor) => doctor.id !== action.payload);
       })
+      .addMatcher(
+        (action) => action.type.endsWith('/pending'),
+        (state) => {
+          state.status = 'loading';
+        },
+      )
+      .addMatcher(
+        (action) => action.type.endsWith('/rejected'),
+        (state, action) => {
+          state.status = 'failed';
+          state.error = action.error.message;
+        },
+      );
+      },      
 });
 
 export const selectDoctors = (state) => state.doctor.doctors;
