@@ -35,4 +35,18 @@ const DoctorList = () => {
                       {doctor.name}
                     </strong>
                   </div>
-export default DoctorList
+                  <p className="md:text-gray-300">................................</p>
+                  <div className="text-[10px] text-gray-500 font-semi-bold md:text-[18px] md:leading-[30px]">
+                    {doctor.specialization}
+                  </div>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};
+
+export default DoctorList;
