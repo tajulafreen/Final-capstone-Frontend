@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { fetchDoctors } from '../../redux/doctor/doctorSlice';
 
 const DoctorList = () => {
+  const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctor.doctors);
   const status = useSelector((state) => state.doctor.status);
   const error = useSelector((state) => state.doctor.error);
@@ -23,13 +24,14 @@ const DoctorList = () => {
           {error}
         </p>
       )}
-       {status === 'succeeded' && (
+
+      {status === 'succeeded' && (
         <ul className="gap-[2rem] md:flex md:gap-[5rem] md:mt-10">
           {doctors.map((doctor) => (
-            <li key={doctor.id} className="transition-transform transform hover:scale-110  duration-500"></li>
-            <Link to={`/doctors/${doctor.id}`} className="no-underline">
-            <img src={doctor.image} alt={doctor.name} className="rounded-[50%] w-72 h-72" />
-            <div className="gap-0 flex flex-col justify-center items-center md:gap-1">
+            <li key={doctor.id} className="transition-transform transform hover:scale-110  duration-500">
+              <Link to={`/doctors/${doctor.id}`} className="no-underline">
+                <img src={doctor.image} alt={doctor.name} className="rounded-[50%] w-72 h-72" />
+                <div className="gap-0 flex flex-col justify-center items-center md:gap-1">
                   <div className="text-[#1F1717]">
                     <strong>
                       {doctor.name}
