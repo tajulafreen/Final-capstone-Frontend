@@ -72,7 +72,7 @@ const doctorSlice = createSlice({
           state.error = action.error.message;
         },
       );
-      },      
+  },
 });
 
 export const selectDoctors = (state) => state.doctor.doctors;
