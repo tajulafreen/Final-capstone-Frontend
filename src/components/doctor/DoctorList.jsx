@@ -27,8 +27,7 @@ const DoctorList = () => {
         <ul className="gap-[2rem] md:flex md:gap-[5rem] md:mt-10">
           {doctors.map((doctor) => (
             <li key={doctor.id} className="transition-transform transform hover:scale-110  duration-500"></li>
-</div>
-  )
-}
+            <Link to={`/doctors/${doctor.id}`} className="no-underline">
+            <img src={doctor.image} alt={doctor.name} className="rounded-[50%] w-72 h-72" />
 
 export default DoctorList
