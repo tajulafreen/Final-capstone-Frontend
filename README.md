@@ -110,10 +110,25 @@ Collaborators.
 
 ## 👥 Author <a name="authors"></a>
 
+👤 **Abel Morara**
+- GitHub: [@githubhandle](https://github.com/tajulafreen)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/tajul-afreen/)
+ 
+
+👤 **Foga Kater Amos**
+
+- GitHub: [@katfogy](https://github.com/katfogy)
+- LinkedIn: [foga](https://www.linkedin.com/in/foga/)
+
 👤 **Diana Beki**
 
 - GitHub: [Diana Beki](https://github.com/DianaBeki)
 - LinkedIn: [Diana Beki](https://www.linkedin.com/in/diana-beki-b49684230/)
+
+
+👤 **Kiko**
+
+- GitHub: [@kit0-0](https://github.com/kit0-0)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
