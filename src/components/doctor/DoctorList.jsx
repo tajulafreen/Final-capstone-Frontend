@@ -29,5 +29,10 @@ const DoctorList = () => {
             <li key={doctor.id} className="transition-transform transform hover:scale-110  duration-500"></li>
             <Link to={`/doctors/${doctor.id}`} className="no-underline">
             <img src={doctor.image} alt={doctor.name} className="rounded-[50%] w-72 h-72" />
-
+            <div className="gap-0 flex flex-col justify-center items-center md:gap-1">
+                  <div className="text-[#1F1717]">
+                    <strong>
+                      {doctor.name}
+                    </strong>
+                  </div>
 export default DoctorList
