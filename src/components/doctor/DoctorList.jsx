@@ -23,6 +23,10 @@ const DoctorList = () => {
           {error}
         </p>
       )}
+       {status === 'succeeded' && (
+        <ul className="gap-[2rem] md:flex md:gap-[5rem] md:mt-10">
+          {doctors.map((doctor) => (
+            <li key={doctor.id} className="transition-transform transform hover:scale-110  duration-500"></li>
 </div>
   )
 }
