@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom';
 import { fetchDoctors } from '../../redux/doctor/doctorSlice';
 
 const DoctorList = () => {
+  const doctors = useSelector((state) => state.doctor.doctors);
+  const status = useSelector((state) => state.doctor.status);
+  const error = useSelector((state) => state.doctor.error);
+
+  useEffect(() => {
+    dispatch(fetchDoctors());
+  }, [dispatch]);
+
   return (
     <div>
       
