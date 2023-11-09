@@ -26,3 +26,12 @@ const SignUpForm = () => {
           <form className="bg-white p-8 shadow-md rounded-md w-96" onSubmit={handleSignUp}>
             <h2 className="text-2xl font-semibold mb-6">Sign Up</h2>
             <div className="mb-4">
+            <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="mt-1 p-2 w-full border rounded-md"
+            placeholder="Enter your name"
+          />
