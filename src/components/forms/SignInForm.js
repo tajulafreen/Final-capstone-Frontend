@@ -8,4 +8,13 @@ const SignInForm = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-};
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+
+    try {
+      await dispatch(signInUser({ name: email }));
+      navigate.push('/doctors');
+    } catch (error) {
+      console.error('Sign In Error:', error);
+    }
+  };
