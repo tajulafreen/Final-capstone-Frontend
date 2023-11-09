@@ -46,3 +46,14 @@ const SignUpForm = () => {
             className="mt-1 p-2 w-full border rounded-md"
             placeholder="Enter your email"
           />
+          </div>
+        <div className="mb-4">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="mt-1 p-2 w-full border rounded-md"
+            placeholder="Enter your password"
+          />
