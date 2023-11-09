@@ -27,3 +27,18 @@ const DoctorDetails = () => {
       </div>
     );
   }
+
+  if (status === 'failed') {
+    return (
+      <div>
+        <div>
+          Error:
+          {' '}
+          {error}
+        </div>
+        <div>
+          Please try again later or contact support.
+        </div>
+      </div>
+    );
+  }
