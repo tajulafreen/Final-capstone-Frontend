@@ -55,3 +55,46 @@ const DoctorDetails = () => {
       </div>
     );
   }
+
+  const selectedDoctor = doctors[0];
+
+  return (
+    <div>
+      <div>
+        <img src={selectedDoctor.image} alt={selectedDoctor.name} />
+      </div>
+
+      <div>
+        <h2>
+          {selectedDoctor.name}
+        </h2>
+        <p>
+          Specialization:
+          {' '}
+          <span>{selectedDoctor.specialization}</span>
+        </p>
+        <p>
+          Fee:
+          {' '}
+          <span>{selectedDoctor.fee}</span>
+        </p>
+        <p>
+          Bio:
+          {' '}
+          <span>{selectedDoctor.bio}</span>
+        </p>
+        <div>
+          <button
+            className="btn btn-secondary"
+            type="button"
+            onClick={() => navigate('/reserve')}
+          >
+            Reserve
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default DoctorDetails;
