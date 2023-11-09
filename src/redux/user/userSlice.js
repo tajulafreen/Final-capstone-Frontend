@@ -28,3 +28,23 @@ export const signUpUser = createAsyncThunk('user/signUp', async (userData) => {
           state.status = 'succeeded';
           state.user = action.payload;
         })
+        .addCase(signInUser.fulfilled, (state, action) => {
+            state.status = 'succeeded';
+            state.user = action.payload;
+          })
+          .addMatcher(
+            (action) => action.type.endsWith('/pending'),
+            (state) => {
+              state.status = 'loading';
+            },
+          )
+          .addMatcher(
+            (action) => action.type.endsWith('/rejected'),
+            (state, action) => {
+              state.status = 'failed';
+              state.error = action.error.message;
+            },
+          );
+      },
+    });
+    
