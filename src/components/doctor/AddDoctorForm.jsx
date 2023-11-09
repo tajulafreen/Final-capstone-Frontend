@@ -64,6 +64,17 @@ const AddDoctorForm = () => {
             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
+        <div className="mb-4">
+          <input
+            type="text"
+            name="fee"
+            placeholder="Fee"
+            value={formData.fee}
+            onChange={handleInputChange}
+            required
+            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+          />
+        </div>
       </form>
     </div>
   )
