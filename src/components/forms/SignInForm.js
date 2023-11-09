@@ -52,3 +52,7 @@ const SignInForm = () => {
         </button>
       </form>
     </div>
+    );
+  };
+  
+  export default SignInForm;
