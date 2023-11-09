@@ -15,7 +15,7 @@ const App = () => (
       <SideNav />
       <div className="flex-1 p-8">
         <Routes>
-          <Route path="/" element={<SignInForm />} />
+          <Route path="/" element={<SignUpForm />} />
           <Route path="/sign-in" element={<SignInForm />} />
           <Route path="/doctors" element={<DoctorList />} />
           <Route path="/add-doctor" element={<AddDoctorForm />} />
