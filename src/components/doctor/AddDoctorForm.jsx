@@ -84,6 +84,13 @@ const AddDoctorForm = () => {
             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
+        <button
+          type="submit"
+          disabled={status === 'loading'}
+          className="bg-blue-500 text-white px-4 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-300 w-full"
+        >
+          {status === 'loading' ? 'Adding...' : 'Add Doctor'}
+        </button>
       </form>
     </div>
   )
