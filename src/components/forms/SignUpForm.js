@@ -10,3 +10,13 @@ const SignUpForm = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
   
+    const handleSignUp = async (e) => {
+        e.preventDefault();
+    
+        try {
+          await dispatch(signUpUser({ name, email, password }));
+          navigate.push('/doctors');
+        } catch (error) {
+          console.error('Sign Up Error:', error);
+        }
+      };
