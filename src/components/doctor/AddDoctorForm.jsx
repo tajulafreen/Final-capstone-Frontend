@@ -75,6 +75,15 @@ const AddDoctorForm = () => {
             className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
           />
         </div>
+        <div className="mb-4">
+          <textarea
+            name="bio"
+            placeholder="Bio"
+            value={formData.bio}
+            onChange={handleInputChange}
+            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+          />
+        </div>
       </form>
     </div>
   )
