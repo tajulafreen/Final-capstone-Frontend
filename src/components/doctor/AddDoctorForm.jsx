@@ -21,7 +21,12 @@ const AddDoctorForm = () => {
       [e.target.name]: e.target.value,
     });
   };
-  
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    dispatch(createDoctor(formData));
+  };
+
   return (
     <div>
       
