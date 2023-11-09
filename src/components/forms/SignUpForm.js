@@ -35,3 +35,14 @@ const SignUpForm = () => {
             className="mt-1 p-2 w-full border rounded-md"
             placeholder="Enter your name"
           />
+            </div>
+        <div className="mb-4">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="mt-1 p-2 w-full border rounded-md"
+            placeholder="Enter your email"
+          />
