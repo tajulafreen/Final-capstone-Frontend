@@ -30,7 +30,7 @@ const SocialMedia = () => (
 const SideNav = () => (
   <div className="border-r-2 h-screen">
     <div className="w-200">
-      <ul className="flex flex-col justify-center items-end mt-14 space-y-2">
+      <ul className="flex flex-col justify-center items-end gap-2 mt-[10rem] space-y-2">
         {adminLinks.map((link) => (
           <li key={link.id}>
             <NavLink

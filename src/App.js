@@ -8,22 +8,20 @@ import DoctorList from './components/doctor/DoctorList';
 import AddDoctorForm from './components/doctor/AddDoctorForm';
 import DoctorDetails from './components/doctor/DoctorDetails';
 
-function App() {
-  return (
-    <Router>
-      <div className="flex">
-        <SideNav />
-        <div className="flex-1 p-8">
-          <Routes>
-            <Route path="/" element={<SignInForm />} />
-            <Route path="/doctors" element={<DoctorList />} />
-            <Route path="/add-doctor" element={<AddDoctorForm />} />
-            <Route path="/doctors/:doctorId" element={<DoctorDetails />} />
-          </Routes>
-        </div>
+const App = () => (
+  <Router>
+    <div className="flex">
+      <SideNav />
+      <div className="flex-1 p-8">
+        <Routes>
+          <Route path="/" element={<SignInForm />} />
+          <Route path="/doctors" element={<DoctorList />} />
+          <Route path="/add-doctor" element={<AddDoctorForm />} />
+          <Route path="/doctors/:doctorId" element={<DoctorDetails />} />
+        </Routes>
       </div>
-    </Router>
-  );
-}
+    </div>
+  </Router>
+);
 
 export default App;
