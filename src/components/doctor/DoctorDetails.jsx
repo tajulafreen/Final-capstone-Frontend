@@ -42,3 +42,16 @@ const DoctorDetails = () => {
       </div>
     );
   }
+
+  if (!doctors.length) {
+    return (
+      <div>
+        <div>
+          Doctor not found
+        </div>
+        <div>
+          <Link to="/doctors">Back to Doctors</Link>
+        </div>
+      </div>
+    );
+  }
