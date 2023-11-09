@@ -29,10 +29,10 @@ const AddDoctorForm = () => {
 
   return (
     <div className="max-w-md mx-auto mt-8 p-6 bg-white shadow-md rounded-md">
-       <h2 className="text-2xl font-bold mb-4 text-center">Add New Doctor</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center">Add New Doctor</h2>
       {status === 'failed' && <div className="text-red-500 mb-4 text-center">{error}</div>}
       <form onSubmit={handleFormSubmit}>
-      <div className="mb-4">
+        <div className="mb-4">
           <input
             type="text"
             name="name"
@@ -93,7 +93,7 @@ const AddDoctorForm = () => {
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default AddDoctorForm;
