@@ -18,7 +18,7 @@ const SignInForm = () => {
       console.error('Sign In Error:', error);
     }
   };
-  eturn(
+  return(
     <div className="flex items-center justify-center h-screen">
       <form className="bg-white p-8 shadow-md rounded-md w-96" onSubmit={handleSignIn}>
         <h2 className="text-2xl font-semibold mb-6">Sign In</h2>
