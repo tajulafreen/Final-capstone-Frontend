@@ -20,3 +20,9 @@ const SignUpForm = () => {
           console.error('Sign Up Error:', error);
         }
       };
+
+      return (
+        <div className="flex items-center justify-center h-screen">
+          <form className="bg-white p-8 shadow-md rounded-md w-96" onSubmit={handleSignUp}>
+            <h2 className="text-2xl font-semibold mb-6">Sign Up</h2>
+            <div className="mb-4">
