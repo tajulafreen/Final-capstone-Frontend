@@ -1,7 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-const AddDoctorForm = () => (
-  <div />
-);
+const AddDoctorForm = () => {
+  return (
+    <div>
+      
+    </div>
+  )
+}
 
-export default AddDoctorForm;
+export default AddDoctorForm
