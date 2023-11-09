@@ -19,3 +19,11 @@ const DoctorDetails = () => {
   useEffect(() => {
     dispatch(fetchDoctorById(doctorId));
   }, [dispatch, doctorId]);
+
+  if (status === 'loading') {
+    return (
+      <div>
+        Loading...
+      </div>
+    );
+  }
