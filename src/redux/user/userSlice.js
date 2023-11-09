@@ -9,3 +9,11 @@ export const signUpUser = createAsyncThunk('user/signUp', async (userData) => {
       throw error.response.data;
     }
   });
+  export const signInUser = createAsyncThunk('user/signIn', async (userData) => {
+    try {
+      const response = await axios.post('http://localhost:3000/login', userData);
+      return response.data;
+    } catch (error) {
+      throw error.response.data;
+    }
+  });
