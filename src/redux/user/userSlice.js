@@ -17,3 +17,14 @@ export const signUpUser = createAsyncThunk('user/signUp', async (userData) => {
       throw error.response.data;
     }
   });
+
+  const userSlice = createSlice({
+    name: 'user',
+    initialState: { user: null, status: 'idle', error: null },
+    reducers: {},
+    extraReducers: (builder) => {
+      builder
+        .addCase(signUpUser.fulfilled, (state, action) => {
+          state.status = 'succeeded';
+          state.user = action.payload;
+        })
