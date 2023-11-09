@@ -28,7 +28,7 @@ const DoctorList = () => {
       {status === 'succeeded' && (
         <ul className="gap-[2rem] md:flex md:gap-[5rem] md:mt-10">
           {doctors.map((doctor) => (
-            <li key={doctor.id} className="transition-transform transform hover:scale-110  duration-500">
+            <li key={doctor.id} className="my-[2rem] md:my-0 transition-transform transform hover:scale-110  duration-500">
               <Link to={`/doctors/${doctor.id}`} className="no-underline">
                 <img src={doctor.image} alt={doctor.name} className="rounded-[50%] w-72 h-72" />
                 <div className="gap-0 flex flex-col justify-center items-center md:gap-1">
@@ -37,7 +37,7 @@ const DoctorList = () => {
                       {doctor.name}
                     </strong>
                   </div>
-                  <p className="md:text-gray-300">................................</p>
+                  <p className="text-gray-300">................................</p>
                   <div className="text-[10px] text-gray-500 font-semi-bold md:text-[18px] md:leading-[30px]">
                     {doctor.specialization}
                   </div>
