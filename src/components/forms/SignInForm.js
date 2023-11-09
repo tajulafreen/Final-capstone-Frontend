@@ -43,3 +43,12 @@ const SignInForm = () => {
             className="mt-1 p-2 w-full border rounded-md"
             placeholder="Enter your password"
           />
+            </div>
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+        >
+          Sign In
+        </button>
+      </form>
+    </div>
