@@ -15,6 +15,9 @@ const SignUpForm = () => {
 
     try {
       await dispatch(signUpUser({ name, email, password }));
+      setName('');
+      setEmail('');
+      setPassword('');
       navigate.push('/doctors');
     } catch (error) {
       console.error('Sign Up Error:', error);
