@@ -67,10 +67,13 @@ const SignUpForm = () => {
         >
           Sign Up
         </button>
+        <p className="mt-2">
+          have an account?
+          {' '}
+          <Link to="/login">Click here to log in</Link>
+        </p>
       </form>
-      <p className="mt-4">
-        Don't have an account? <Link to="/login">Click here to log in</Link>
-      </p>
+
     </div>
   );
 };

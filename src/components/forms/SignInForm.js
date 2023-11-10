@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { signInUser } from '../../redux/user/userSlice';
 
 const SignInForm = () => {
@@ -52,6 +52,11 @@ const SignInForm = () => {
         >
           Sign In
         </button>
+        <p className="mt-2">
+          Don&apos;t have an account?
+          {' '}
+          <Link to="/">Click here to sign_up</Link>
+        </p>
       </form>
     </div>
   );
