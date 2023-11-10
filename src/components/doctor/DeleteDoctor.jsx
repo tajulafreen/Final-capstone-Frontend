@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
-import { fetchDoctorById, deleteDoctor, selectDoctors, selectStatus, selectError } from '../../redux/doctor/doctorSlice';
+import {
+  fetchDoctorById, deleteDoctor, selectDoctors, selectStatus, selectError,
+} from '../../redux/doctor/doctorSlice';
 
 const DeleteDoctorPage = () => {
   const dispatch = useDispatch();
@@ -18,7 +20,7 @@ const DeleteDoctorPage = () => {
   const handleDelete = async () => {
     try {
       await dispatch(deleteDoctor(doctorId));
-      history.push('/doctors'); 
+      history.push('/doctors');
     } catch (err) {
       console.error('Error deleting doctor:', err);
     }
@@ -27,11 +29,20 @@ const DeleteDoctorPage = () => {
   return (
     <div>
       {status === 'loading' && <p>Loading...</p>}
-      {status === 'failed' && <p>Error: {error}</p>}
+      {status === 'failed' && (
+      <p>
+        Error:
+        {error}
+      </p>
+      )}
       {status === 'succeeded' && (
         <>
           <h2>Delete Doctor</h2>
-          <p>Are you sure you want to delete {doctor.name}?</p>
+          <p>
+            Are you sure you want to delete
+            {doctor.name}
+            ?
+          </p>
           <button onClick={handleDelete}>Delete</button>
         </>
       )}
