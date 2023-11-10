@@ -14,3 +14,12 @@ const DeleteDoctorPage = () => {
   useEffect(() => {
     dispatch(fetchDoctorById(doctorId));
   }, [dispatch, doctorId]);
+
+  const handleDelete = async () => {
+    try {
+      await dispatch(deleteDoctor(doctorId));
+      history.push('/doctors'); 
+    } catch (err) {
+      console.error('Error deleting doctor:', err);
+    }
+  };
