@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { signUpUser } from '../../redux/user/userSlice';
 
 const SignUpForm = () => {
@@ -18,7 +18,7 @@ const SignUpForm = () => {
       setName('');
       setEmail('');
       setPassword('');
-      navigate.push('/doctors');
+      navigate('/doctors');
     } catch (error) {
       console.error('Sign Up Error:', error);
     }
@@ -68,6 +68,9 @@ const SignUpForm = () => {
           Sign Up
         </button>
       </form>
+      <p className="mt-4">
+        Don't have an account? <Link to="/login">Click here to log in</Link>
+      </p>
     </div>
   );
 };
