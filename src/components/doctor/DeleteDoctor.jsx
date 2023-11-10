@@ -23,3 +23,20 @@ const DeleteDoctorPage = () => {
       console.error('Error deleting doctor:', err);
     }
   };
+
+  return (
+    <div>
+      {status === 'loading' && <p>Loading...</p>}
+      {status === 'failed' && <p>Error: {error}</p>}
+      {status === 'succeeded' && (
+        <>
+          <h2>Delete Doctor</h2>
+          <p>Are you sure you want to delete {doctor.name}?</p>
+          <button onClick={handleDelete}>Delete</button>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default DeleteDoctorPage;
