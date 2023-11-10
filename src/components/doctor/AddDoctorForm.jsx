@@ -1,97 +1,101 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { createDoctor, selectStatus, selectError } from '../../redux/doctor/doctorSlice';
+import { useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
+import { createDoctor } from '../../redux/doctor/doctorSlice';
 
 const AddDoctorForm = () => {
   const dispatch = useDispatch();
-  const status = useSelector(selectStatus);
-  const error = useSelector(selectError);
+  const [name, setName] = useState('');
+  const [specialization, setSpecialization] = useState('');
+  const [bio, setBio] = useState('');
+  const [image, setImage] = useState('');
+  const [fee, setFee] = useState('');
 
-  const [formData, setFormData] = useState({
-    name: '',
-    specialization: '',
-    image: '',
-    fee: '',
-    bio: '',
-  });
-
-  const handleInputChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleFormSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(createDoctor(formData));
+    if (name && specialization && bio && image && fee) {
+      dispatch(createDoctor({
+        name,
+        specialization,
+        bio,
+        image,
+        fee,
+      }));
+      toast.success('Doctor added successfuly');
+    } else {
+      toast.error('Please fill all fields before you submit');
+    }
+    setName('');
+    setSpecialization('');
+    setBio('');
+    setFee('');
+    setImage('');
   };
-
   return (
     <div className="max-w-md mx-auto mt-8 p-6 bg-white shadow-md rounded-md">
       <h2 className="text-2xl font-bold mb-4 text-center">Add New Doctor</h2>
-      {status === 'failed' && <div className="text-red-500 mb-4 text-center">{error}</div>}
-      <form onSubmit={handleFormSubmit}>
-        <div className="mb-4">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleInputChange}
-            required
-            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="text"
-            name="specialization"
-            placeholder="Specialization"
-            value={formData.specialization}
-            onChange={handleInputChange}
-            required
-            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="text"
-            name="image"
-            placeholder="Image URL"
-            value={formData.image}
-            onChange={handleInputChange}
-            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="text"
-            name="fee"
-            placeholder="Fee"
-            value={formData.fee}
-            onChange={handleInputChange}
-            required
-            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-          />
-        </div>
-        <div className="mb-4">
-          <textarea
-            name="bio"
-            placeholder="Bio"
-            value={formData.bio}
-            onChange={handleInputChange}
-            className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-          />
-        </div>
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className="bg-green-500 hover:bg-blue-500 text-white px-4 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-300 w-full"
-        >
-          {status === 'loading' ? 'Adding...' : 'Add Doctor'}
-        </button>
-      </form>
+      <div className="mb-4">
+        <form onSubmit={handleSubmit}>
+          <div className="mb-4">
+            <input
+              type="text"
+              name="name"
+              placeholder="Full name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+            />
+          </div>
+          <div className="mb-4">
+            <input
+              type="text"
+              name="specialization"
+              placeholder="Specialization"
+              value={specialization}
+              onChange={(e) => setSpecialization(e.target.value)}
+              required
+              className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+            />
+          </div>
+          <div className="mb-4">
+            <input
+              type="text"
+              name="image"
+              placeholder="Image URL"
+              value={image}
+              onChange={(e) => setImage(e.target.value)}
+              className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+            />
+          </div>
+          <div className="mb-4">
+            <input
+              type="text"
+              name="fee"
+              placeholder="Fee"
+              value={fee}
+              onChange={(e) => setFee(e.target.value)}
+              required
+              className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+            />
+          </div>
+          <div className="mb-4">
+            <textarea
+              name="bio"
+              placeholder="Bio"
+              value={bio}
+              onChange={(e) => setBio(e.target.value)}
+              className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-red-500 hover:bg-red-800 text-white  px-4 py-2 rounded-md focus:outline-none focus:ring focus:border-blue-300 w-full"
+          >
+            Add Doctor
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
