@@ -11,4 +11,6 @@ const DeleteDoctorPage = () => {
   const status = useSelector(selectStatus);
   const error = useSelector(selectError);
 
-  
+  useEffect(() => {
+    dispatch(fetchDoctorById(doctorId));
+  }, [dispatch, doctorId]);
