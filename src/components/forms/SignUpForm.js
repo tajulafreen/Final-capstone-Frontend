@@ -1,29 +1,44 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
-import { signInUser } from '../../redux/user/userSlice';
+import { signUpUser } from '../../redux/user/userSlice';
 
-const SignInForm = () => {
+const SignUpForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSignIn = async (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
 
     try {
-      await dispatch(signInUser({ name: email }));
+      await dispatch(signUpUser({ name, email, password }));
+      setName('');
+      setEmail('');
+      setPassword('');
       navigate('/doctors');
     } catch (error) {
-      console.error('Sign In Error:', error);
+      console.error('Sign Up Error:', error);
     }
   };
 
   return (
     <div className="flex items-center justify-center h-screen">
-      <form className="bg-white p-8 shadow-md rounded-md w-96" onSubmit={handleSignIn}>
-        <h2 className="text-2xl font-semibold mb-6">Sign In</h2>
+      <form className="bg-white p-8 shadow-md rounded-md w-96" onSubmit={handleSignUp}>
+        <h2 className="text-2xl font-semibold mb-6">Sign Up</h2>
+        <div className="mb-4">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="mt-1 p-2 w-full border rounded-md"
+            placeholder="Enter your name"
+          />
+        </div>
         <div className="mb-4">
           <input
             type="email"
@@ -50,16 +65,17 @@ const SignInForm = () => {
           type="submit"
           className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
         >
-          Sign In
+          Sign Up
         </button>
         <p className="mt-2">
-          Don&apos;t have an account?
+          have an account?
           {' '}
-          <Link to="/">Click here to sign_up</Link>
+          <Link to="/login">Click here to log in</Link>
         </p>
       </form>
+
     </div>
   );
 };
 
-export default SignInForm;
+export default SignUpForm;
