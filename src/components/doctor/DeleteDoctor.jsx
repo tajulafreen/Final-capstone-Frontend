@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useHistory } from 'react-router-dom';
-import {
-  fetchDoctorById, deleteDoctor, selectDoctors, selectStatus, selectError,
-} from '../../redux/doctor/doctorSlice';
+import { fetchDoctorById, deleteDoctor, selectDoctors, selectStatus, selectError } from '../../redux/doctor/doctorSlice';
 
 const DeleteDoctorPage = () => {
   const dispatch = useDispatch();
@@ -20,31 +18,27 @@ const DeleteDoctorPage = () => {
   const handleDelete = async () => {
     try {
       await dispatch(deleteDoctor(doctorId));
-      history.push('/doctors');
+      history.push('/doctors'); 
     } catch (err) {
       console.error('Error deleting doctor:', err);
     }
   };
 
   return (
-    <div>
+    <div className="container mx-auto my-4 p-4 bg-white shadow-lg rounded-lg">
       {status === 'loading' && <p>Loading...</p>}
-      {status === 'failed' && (
-      <p>
-        Error:
-        {error}
-      </p>
-      )}
+      {status === 'failed' && <p className="text-red-500">Error: {error}</p>}
       {status === 'succeeded' && (
-        <>
-          <h2>Delete Doctor</h2>
-          <p>
-            Are you sure you want to delete
-            {doctor.name}
-            ?
-          </p>
-          <button onClick={handleDelete}>Delete</button>
-        </>
+        <div>
+          <h2 className="text-2xl font-bold mb-4">Delete Doctor</h2>
+          <p>Are you sure you want to delete {doctor.name}?</p>
+          <button
+            className="bg-red-500 text-white px-4 py-2 rounded mt-4 hover:bg-red-600"
+            onClick={handleDelete}
+          >
+            Delete
+          </button>
+        </div>
       )}
     </div>
   );
