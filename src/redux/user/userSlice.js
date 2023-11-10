@@ -15,7 +15,11 @@ export const signInUser = createAsyncThunk('user/signIn', async (userData) => {
     const response = await axios.post('http://localhost:3000/login', userData);
     return response.data;
   } catch (error) {
-    throw error.response.data;
+    if (error.response && error.response.status === 401) {
+      throw new Error('Invalid email or password. Please try again.');
+    } else {
+      throw new Error('An unexpected error occurred. Please try again later.');
+    }
   }
 });
 
