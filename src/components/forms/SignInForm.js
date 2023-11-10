@@ -14,7 +14,7 @@ const SignInForm = () => {
 
     try {
       await dispatch(signInUser({ name: email }));
-      navigate.push('/doctors');
+      navigate('/doctors');
     } catch (error) {
       console.error('Sign In Error:', error);
     }
