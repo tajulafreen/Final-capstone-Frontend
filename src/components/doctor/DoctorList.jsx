@@ -30,7 +30,7 @@ const DoctorList = () => {
           {doctors.map((doctor) => (
             <li key={doctor.id} className="my-[2rem] md:my-0 transition-transform transform hover:scale-110  duration-500">
               <Link to={`/doctors/${doctor.id}`} className="no-underline">
-                <img src={doctor.image} alt={doctor.name} className="rounded-[50%] object-cover w-72 h-72" />
+                <img src={doctor.image} alt={doctor.name} className="rounded-full object-cover w-72 h-72" />
                 <div className="gap-0 flex flex-col justify-center items-center md:gap-1">
                   <div className="text-[#1F1717]">
                     <strong>
