@@ -1,17 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import {
-  fetchDoctorById, deleteDoctor, selectDoctors, selectStatus, selectError,
+  fetchDoctorById,
+  deleteDoctor,
+  selectDoctors,
+  selectStatus,
+  selectError,
 } from '../../redux/doctor/doctorSlice';
 
 const DeleteDoctorPage = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const { doctorId } = useParams();
   const doctor = useSelector(selectDoctors)[0];
   const status = useSelector(selectStatus);
   const error = useSelector(selectError);
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchDoctorById(doctorId));
@@ -20,7 +24,7 @@ const DeleteDoctorPage = () => {
   const handleDelete = async () => {
     try {
       await dispatch(deleteDoctor(doctorId));
-      history.push('/doctors');
+      navigate('/doctors');
     } catch (err) {
       console.error('Error deleting doctor:', err);
     }
@@ -30,10 +34,10 @@ const DeleteDoctorPage = () => {
     <div className="container mx-auto my-4 p-4 bg-white shadow-lg rounded-lg">
       {status === 'loading' && <p>Loading...</p>}
       {status === 'failed' && (
-      <p className="text-red-500">
-        Error:
-        {error}
-      </p>
+        <p className="text-red-500">
+          Error:
+          {error}
+        </p>
       )}
       {status === 'succeeded' && (
         <div>
