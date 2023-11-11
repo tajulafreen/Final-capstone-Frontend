@@ -12,7 +12,7 @@ export const createDoctor = createAsyncThunk('doctor/createDoctor', async (docto
 
 export const fetchDoctors = createAsyncThunk('doctor/fetchDoctors', async () => {
   try {
-    const response = await axios.get('http://127.0.0.1:3000/api/v1/doctors/');
+    const response = await axios.get('http://127.0.0.1:4000/api/v1/doctors/');
     return response.data;
   } catch (error) {
     throw error.response.data;
@@ -21,7 +21,7 @@ export const fetchDoctors = createAsyncThunk('doctor/fetchDoctors', async () => 
 
 export const fetchDoctorById = createAsyncThunk('doctor/fetchDoctorById', async (doctorId) => {
   try {
-    const response = await axios.get(`http://127.0.0.1:3000/api/v1/doctors/${doctorId}`);
+    const response = await axios.get(`http://127.0.0.1:4000/api/v1/doctors/${doctorId}`);
     return response.data;
   } catch (error) {
     throw error.response.data;
