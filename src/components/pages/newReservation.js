@@ -2,15 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 import { createReservation } from '../../redux/reservation/thunk';
-import { useUser } from '../userAccess/userContext';
 import { fetchDoctors } from '../../redux/doctor/doctorSlice';
+import { selectUser, selectStatus } from '../../redux/user/userSlice';
 
 const NewReservation = () => {
   const dispatch = useDispatch();
-  const { doctors } = useSelector((store) => store.doctor);
+  const doctors = useSelector((state) => state.doctor.doctors);
   const location = useLocation();
   const selectedDoctor = location.state;
-  const { user } = useUser();
+  const user = useSelector(selectUser);
+  const userStatus = useSelector(selectStatus);
+
   const userId = user?.status?.data?.id;
 
   const [date, setDate] = useState('');
@@ -21,13 +23,15 @@ const NewReservation = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!userId) {
+      console.error('User ID is not available. Please login and try again.');
+      return;
+    }
+
     setIsLoading(true);
 
     try {
-      if (!userId) {
-        throw new Error('User ID is not available. Please login and try again.');
-      }
-
       const reservationData = {
         user_id: userId,
         doctor_id: doctorId,
@@ -39,7 +43,7 @@ const NewReservation = () => {
       setDoctorId('');
       setCity('');
       setDate('');
-    } catch (error) {
+    } catch (err) {
       setError('Error creating reservation. Please try again later.');
     } finally {
       setIsLoading(false);
@@ -47,8 +51,10 @@ const NewReservation = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchDoctors());
-  }, [dispatch]);
+    if (userStatus === 'idle' && userId) {
+      dispatch(fetchDoctors());
+    }
+  }, [dispatch, userStatus, userId]);
 
   return (
     <div
@@ -70,9 +76,9 @@ const NewReservation = () => {
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 w-full">
           {/* Date Input */}
           <div className="flex flex-col w-full md:w-1/2">
-            <label htmlFor="date" className="text-lg font-medium text-gray-600" style={{ color: 'white' }}>
+            <p className="text-lg font-medium text-gray-600" style={{ color: 'white' }}>
               Date
-            </label>
+            </p>
             <input
               id="date"
               type="date"
@@ -85,9 +91,9 @@ const NewReservation = () => {
 
           {/* City Input */}
           <div className="flex flex-col w-full md:w-1/2">
-            <label htmlFor="city" className="text-lg font-medium text-gray-600" style={{ color: 'white' }}>
+            <p className="text-lg font-medium text-gray-600" style={{ color: 'white' }}>
               City
-            </label>
+            </p>
             <input
               id="city"
               type="text"
@@ -100,9 +106,9 @@ const NewReservation = () => {
 
           {/* Doctor Selection */}
           <div className="flex flex-col w-full md:w-1/2">
-            <label htmlFor="doctor" className="text-md font-medium text-gray-600" style={{ color: 'white' }}>
+            <p className="text-md font-medium text-gray-600" style={{ color: 'white' }}>
               Choose Doctor
-            </label>
+            </p>
             <select
               id="doctor"
               onChange={(e) => setDoctorId(e.target.value)}
