@@ -33,7 +33,7 @@ const reservationsSlice = createSlice({
       })
       .addCase(createReservation.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.reservations.push(action.payload);
+        state.reservations = action.payload;
       })
       .addCase(createReservation.rejected, (state) => {
         state.isLoading = false;

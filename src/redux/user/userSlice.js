@@ -13,6 +13,7 @@ export const signUpUser = createAsyncThunk('user/signUp', async (userData) => {
 export const signInUser = createAsyncThunk('user/signIn', async (userData) => {
   try {
     const response = await axios.post('http://localhost:3000/login', userData);
+    console.log(response.data);
     return response.data;
   } catch (error) {
     if (error.response && error.response.status === 401) {
