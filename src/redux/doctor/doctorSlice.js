@@ -30,7 +30,7 @@ export const fetchDoctorById = createAsyncThunk('doctor/fetchDoctorById', async 
 
 export const deleteDoctor = createAsyncThunk('doctor/deleteDoctor', async (doctorId) => {
   try {
-    await axios.delete(`http://localhost:4000/api/v1/doctors/${doctorId}`);
+    await axios.delete(`http://localhost:3000/api/v1/doctors/${doctorId}`);
     return doctorId;
   } catch (error) {
     throw error.response.data;
