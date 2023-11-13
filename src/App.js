@@ -8,6 +8,7 @@ import SideNav from './components/navbar/SideNav';
 import DoctorList from './components/doctor/DoctorList';
 import AddDoctorForm from './components/doctor/AddDoctorForm';
 import DoctorDetails from './components/doctor/DoctorDetails';
+import DeleteDoctor from './components/doctor/DeleteDoctor';
 
 const App = () => (
   <Router>
@@ -20,6 +21,7 @@ const App = () => (
           <Route path="/doctors" element={<DoctorList />} />
           <Route path="/add-doctor" element={<AddDoctorForm />} />
           <Route path="/doctors/:doctorId" element={<DoctorDetails />} />
+          <Route path="/delete-doctor" element={<DeleteDoctor />} />
         </Routes>
       </div>
     </div>

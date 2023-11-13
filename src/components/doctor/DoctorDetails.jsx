@@ -61,7 +61,7 @@ const DoctorDetails = () => {
   return (
     <div>
       <div>
-        <img src={selectedDoctor.image} alt={selectedDoctor.name} />
+        <img src={selectedDoctor.image} alt={selectedDoctor.name} className="rounded-[50%] object-cover w-72 h-72" />
       </div>
 
       <div>
