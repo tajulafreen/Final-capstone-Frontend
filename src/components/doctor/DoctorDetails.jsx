@@ -87,7 +87,7 @@ const DoctorDetails = () => {
           <button
             className="btn btn-secondary"
             type="button"
-            onClick={() => navigate('/reserve')}
+            onClick={() => navigate('/New-reservation')}
           >
             Reserve
           </button>
