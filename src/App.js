@@ -8,6 +8,8 @@ import SideNav from './components/navbar/SideNav';
 import DoctorList from './components/doctor/DoctorList';
 import AddDoctorForm from './components/doctor/AddDoctorForm';
 import DoctorDetails from './components/doctor/DoctorDetails';
+import NewReservation from './components/pages/newReservation';
+import MyReservations from './components/pages/myReservations';
 
 const App = () => (
   <Router>
@@ -20,6 +22,8 @@ const App = () => (
           <Route path="/doctors" element={<DoctorList />} />
           <Route path="/add-doctor" element={<AddDoctorForm />} />
           <Route path="/doctors/:doctorId" element={<DoctorDetails />} />
+          <Route path="New-reservation" element={<NewReservation />} />
+          <Route path="My-reservations" element={<MyReservations />} />
         </Routes>
       </div>
     </div>
