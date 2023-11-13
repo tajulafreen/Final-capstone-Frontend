@@ -1,63 +1,46 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useNavigate } from 'react-router-dom';
-import {
-  fetchDoctorById,
-  deleteDoctor,
-  selectDoctors,
-  selectStatus,
-  selectError,
-} from '../../redux/doctor/doctorSlice';
+import { fetchDoctors, deleteDoctor } from '../../redux/doctor/doctorSlice';
 
-const DeleteDoctorPage = () => {
+const DeleteDoctor = () => {
+  const { doctors, status, error } = useSelector((store) => store.doctor);
   const dispatch = useDispatch();
-  const { doctorId } = useParams();
-  const doctor = useSelector(selectDoctors)[0];
-  const status = useSelector(selectStatus);
-  const error = useSelector(selectError);
-  const navigate = useNavigate();
 
   useEffect(() => {
-    dispatch(fetchDoctorById(doctorId));
-  }, [dispatch, doctorId]);
-
-  const handleDelete = async () => {
-    try {
-      await dispatch(deleteDoctor(doctorId));
-      navigate('/doctors');
-    } catch (err) {
-      console.error('Error deleting doctor:', err);
-    }
+    dispatch(fetchDoctors());
+  }, [dispatch]);
+  const handleDelete = (id) => {
+    dispatch(deleteDoctor(id));
   };
-
   return (
-    <div className="container mx-auto my-4 p-4 bg-white shadow-lg rounded-lg">
+    <>
+      <div className="text-center">
+        <h1 className="font-bold text-[#1a1a1a] mb-5">Delete Doctor</h1>
+      </div>
       {status === 'loading' && <p>Loading...</p>}
       {status === 'failed' && (
-        <p className="text-red-500">
+        <p>
           Error:
           {error}
         </p>
       )}
-      {status === 'succeeded' && (
-        <div>
-          <h2 className="text-2xl font-bold mb-4">Delete Doctor</h2>
-          <p>
-            Are you sure you want to delete
-            {doctor.name}
-            ?
-          </p>
-          <button
-            type="button"
-            className="bg-red-500 text-white px-4 py-2 rounded mt-4 hover:bg-red-600"
-            onClick={handleDelete}
-          >
-            Delete
-          </button>
-        </div>
-      )}
-    </div>
+      {doctors.length === 0 ? (<h1 className="text-xl mt-20 text-slate-500"> No doctors Added!!</h1>)
+        : (doctors.map((doctor) => (
+          <div key={doctor.id} className="grid grid-cols-2">
+            <img src={doctor.image} alt={doctor.name} className="" />
+            <div className="">
+              <div>
+                <p className="font-bold">{doctor.name}</p>
+                <p className="">{doctor.specialization}</p>
+              </div>
+              <button type="button" className="" onClick={() => { handleDelete(doctor.id); }}>
+                Delete
+              </button>
+            </div>
+          </div>
+        )))}
+    </>
   );
 };
 
-export default DeleteDoctorPage;
+export default DeleteDoctor;

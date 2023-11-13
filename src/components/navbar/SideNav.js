@@ -10,6 +10,7 @@ const adminLinks = [
   { id: 2, path: '/newAppointment', text: 'New appointment' },
   { id: 3, path: '/my-appointment', text: 'My appointment' },
   { id: 4, path: '/add-doctor', text: 'Add Doctor' },
+  { id: 4, path: '/delete-doctor', text: 'Delete Doctor' },
 ];
 
 const SocialMedia = () => (
