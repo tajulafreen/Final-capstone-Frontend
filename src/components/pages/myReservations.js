@@ -1,23 +1,21 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchReservations } from '../../redux/reservation/thunk';
-import { selectUser } from '../../redux/user/userSlice';
+import { fetchReservations, cancelReservation } from '../../redux/reservation/thunk';
 
 const MyReservations = () => {
   const dispatch = useDispatch();
-  const selectUser = null;
+  const userId = useSelector((state) => state.user.user?.id);
+  const reservations = useSelector((state) => state.reservationsList.reservations);
 
-  if (selectUser) {
-    userId = selectUser;
-  }
-
-  // Get reservations data from Redux store
-  const { reservations } = useSelector((store) => store.reservationsList);
-
-  // Fetch reservations when the component mounts
   useEffect(() => {
-    dispatch(fetchReservations(userId));
+    if (userId) {
+      dispatch(fetchReservations(userId));
+    }
   }, [dispatch, userId]);
+
+  const handleCancelReservation = (reservationId) => {
+    dispatch(cancelReservation(reservationId));
+  };
 
   return (
     <div className="container mx-auto mt-8">
@@ -30,6 +28,7 @@ const MyReservations = () => {
             <th className="py-2 px-4 border">City</th>
             <th className="py-2 px-4 border">Doctor</th>
             {/* You can add more headers here if needed */}
+            <th className="py-2 px-4 border">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -40,6 +39,11 @@ const MyReservations = () => {
               <td className="py-2 px-4 border">{reservation.city}</td>
               <td className="py-2 px-4 border">{reservation.doctor.name}</td>
               {/* Add more cells based on reservation properties */}
+              <td className="py-2 px-4 border">
+                <button type="button" onClick={() => handleCancelReservation(reservation.id)}>
+                  Cancel Reservation
+                </button>
+              </td>
             </tr>
           ))}
         </tbody>
