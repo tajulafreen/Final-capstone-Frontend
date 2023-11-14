@@ -31,7 +31,13 @@ const NewReservation = () => {
 
     setIsLoading(true);
 
-   
+    try {
+      const reservationData = {
+        user_id: userId,
+        doctor_id: doctorId,
+        city,
+        date,
+      };
 
       await dispatch(createReservation({ data: reservationData }));
       setDoctorId('');
