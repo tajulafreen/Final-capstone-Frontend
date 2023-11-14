@@ -24,10 +24,7 @@ const NewReservation = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!userId) {
-      console.error('User ID is not available. Please login and try again.');
-      return;
-    }
+   
 
     setIsLoading(true);
 
