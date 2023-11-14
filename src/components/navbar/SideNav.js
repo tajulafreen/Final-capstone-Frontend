@@ -7,8 +7,8 @@ import { TiSocialGooglePlus } from 'react-icons/ti';
 
 const adminLinks = [
   { id: 1, path: '/doctors', text: 'Doctors' },
-  { id: 2, path: '/newAppointment', text: 'New appointment' },
-  { id: 3, path: '/my-appointment', text: 'My appointment' },
+  { id: 2, path: '/New-reservation', text: 'New appointment' },
+  { id: 3, path: '/My-reservations', text: 'My appointment' },
   { id: 4, path: '/add-doctor', text: 'Add Doctor' },
   { id: 4, path: '/delete-doctor', text: 'Delete Doctor' },
 ];

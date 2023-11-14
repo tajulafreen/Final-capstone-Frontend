@@ -26,13 +26,14 @@ const SignInForm = () => {
         <h2 className="text-2xl font-semibold mb-6">Sign In</h2>
         <div className="mb-4">
           <input
-            type="email"
-            id="email"
-            name="email"
+            type="text"
+            id="name"
+            name="name"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="mt-1 p-2 w-full border rounded-md"
             placeholder="Enter your email"
+            required
           />
         </div>
         <div className="mb-4">

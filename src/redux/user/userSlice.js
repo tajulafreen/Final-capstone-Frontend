@@ -13,6 +13,7 @@ export const signUpUser = createAsyncThunk('user/signUp', async (userData) => {
 export const signInUser = createAsyncThunk('user/signIn', async (userData) => {
   try {
     const response = await axios.post('http://localhost:3000/login', userData);
+
     return response.data;
   } catch (error) {
     if (error.response && error.response.status === 401) {
@@ -35,7 +36,9 @@ const userSlice = createSlice({
       })
       .addCase(signInUser.fulfilled, (state, action) => {
         state.status = 'succeeded';
-        state.user = action.payload;
+        console.log(action.payload.status.data.id);
+        state.user = action.payload.status.data.id;
+        localStorage.setItem('user_id', JSON.stringify(action.payload.status.data.id));
       })
       .addMatcher(
         (action) => action.type.endsWith('/pending'),
