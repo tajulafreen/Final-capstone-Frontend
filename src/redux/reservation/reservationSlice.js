@@ -22,6 +22,11 @@ const reservationsSlice = createSlice({
         state.isLoading = false;
         state.reservations = action.payload;
       })
+      .addCase(fetchReservations.rejected, (state) => {
+        state.isLoading = false;
+        state.error = true;
+        state.errMsg = 'Failed to fetch reservations.';
+      })
      
   },
 });
