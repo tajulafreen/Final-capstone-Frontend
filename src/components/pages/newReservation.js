@@ -44,7 +44,7 @@ const NewReservation = () => {
       setCity('');
       setDate('');
     } catch (err) {
-      setError('Error creating reservation. Please try again later.');
+      setError('Error creating a reservation. Please try again later.');
     } finally {
       setIsLoading(false);
     }
