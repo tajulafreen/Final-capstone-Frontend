@@ -35,7 +35,11 @@ const reservationsSlice = createSlice({
         state.isLoading = false;
         state.reservations = action.payload;
       })
-     
+      .addCase(createReservation.rejected, (state) => {
+        state.isLoading = false;
+        state.error = true;
+        state.errMsg = 'Failed to create reservation.';
+      });
   },
 });
 
