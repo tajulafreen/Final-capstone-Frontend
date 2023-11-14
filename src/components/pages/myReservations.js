@@ -18,7 +18,19 @@ const MyReservations = () => {
   };
 
   return (
-    
+    <div className="container mx-auto mt-8">
+      <h2 className="text-2xl font-bold mb-4 my-reserve-head">My Reservations</h2>
+      <table className="w-full border-collapse">
+        <thead>
+          <tr className="bg-gray-200">
+            <th className="py-2 px-4 border">Id</th>
+            <th className="py-2 px-4 border">Date</th>
+            <th className="py-2 px-4 border">City</th>
+            <th className="py-2 px-4 border">Doctor</th>
+            {/* You can add more headers here if needed */}
+            <th className="py-2 px-4 border">Actions</th>
+          </tr>
+        </thead>
         <tbody>
           {reservations.map((reservation) => (
             <tr key={reservation.id} className="bg-white hover:bg-gray-100">
