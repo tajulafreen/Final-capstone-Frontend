@@ -13,7 +13,7 @@ const NewReservation = () => {
   const user = useSelector(selectUser);
   const userStatus = useSelector(selectStatus);
 
-  
+  const userId = user?.status?.data?.id;
 
   const [date, setDate] = useState('');
   const [city, setCity] = useState('');
