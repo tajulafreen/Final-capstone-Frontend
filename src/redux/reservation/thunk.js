@@ -7,7 +7,6 @@ const url = 'http://127.0.0.1:3000/api/v1';
 export const fetchReservations = createAsyncThunk('reservations/fetchReservations', async (userId, thunkAPI) => {
   try {
     const response = await axios.get(`${url}/users/${userId}/reservations`);
-    console.log(response.data, userId);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.response.data);
