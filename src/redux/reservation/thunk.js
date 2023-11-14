@@ -16,7 +16,7 @@ export const fetchReservations = createAsyncThunk('reservations/fetchReservation
 export const createReservation = createAsyncThunk('reservations/createReservation', async ({ data }, thunkAPI) => {
   try {
     const response = await axios.post(`${url}/users/${data.userId}/reservations`, data);
-    window.location.reload();
+    // window.location.reload();
     thunkAPI.dispatch(fetchReservations());
     return response.data;
   } catch (error) {
