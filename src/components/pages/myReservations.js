@@ -7,11 +7,7 @@ const MyReservations = () => {
   const userId = useSelector((state) => state.user.user?.id);
   const reservations = useSelector((state) => state.reservationsList.reservations);
 
-  useEffect(() => {
-    if (userId) {
-      dispatch(fetchReservations(userId));
-    }
-  }, [dispatch, userId]);
+  
 
   const handleCancelReservation = (reservationId) => {
     dispatch(cancelReservation(reservationId));
