@@ -4,7 +4,7 @@ import { fetchReservations, cancelReservation } from '../../redux/reservation/th
 
 const MyReservations = () => {
   const dispatch = useDispatch();
-  const userId = useSelector((state) => state.user.user?.id);
+  const userId = JSON.parse(localStorage.getItem('user_id'));
   const reservations = useSelector((state) => state.reservationsList.reservations);
 
   useEffect(() => {
