@@ -3,17 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useLocation } from 'react-router';
 import { createReservation } from '../../redux/reservation/thunk';
 import { fetchDoctors } from '../../redux/doctor/doctorSlice';
-import { selectUser, selectStatus } from '../../redux/user/userSlice';
+import { selectStatus } from '../../redux/user/userSlice';
 
 const NewReservation = () => {
   const dispatch = useDispatch();
   const doctors = useSelector((state) => state.doctor.doctors);
   const location = useLocation();
   const selectedDoctor = location.state;
-  const user = useSelector(selectUser);
   const userStatus = useSelector(selectStatus);
 
-  const userId = user?.status?.data?.id;
+  const userId = JSON.parse(localStorage.getItem('user_id'));
 
   const [date, setDate] = useState('');
   const [city, setCity] = useState('');
