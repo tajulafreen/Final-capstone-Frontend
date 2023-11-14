@@ -116,7 +116,7 @@ const NewReservation = () => {
               className="p-2 border rounded reserve-select"
               required
             >
-              <option value="">Select a Doctor</option>
+              <option value="">Select Doctor</option>
               {doctors.map((doctor) => (
                 <option key={doctor.id} value={doctor.id}>
                   {doctor.name}
