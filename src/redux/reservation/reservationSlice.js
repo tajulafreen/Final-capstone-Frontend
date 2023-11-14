@@ -14,7 +14,11 @@ const reservationsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-
+      .addCase(fetchReservations.pending, (state) => {
+        state.isLoading = true;
+        state.error = false;
+      })
+     
   },
 });
 
