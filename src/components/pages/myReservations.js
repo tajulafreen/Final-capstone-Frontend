@@ -13,7 +13,9 @@ const MyReservations = () => {
     }
   }, [dispatch, userId]);
 
-  
+  const handleCancelReservation = (reservationId) => {
+    dispatch(cancelReservation(reservationId));
+  };
 
   return (
     <div className="container mx-auto mt-8">
