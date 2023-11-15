@@ -25,10 +25,10 @@ const DoctorList = () => {
         </p>
       )}
 
-      {status === 'succeeded' && (
+      {(status === 'succeeded' && doctors.length > 0) ? (
         <ul className="gap-[2rem] md:flex md:gap-[5rem] md:mt-10">
           {doctors.map((doctor) => (
-            <li key={doctor.id} className="my-[2rem] md:my-0 transition-transform transform hover:scale-110  duration-500">
+            <li key={doctor.id} className="my-[2rem] md:my-0 transition-transform transform hover:scale-110 duration-500">
               <Link to={`/doctors/${doctor.id}`} className="no-underline">
                 <div className="flex items-center justify-center">
                   <img
@@ -52,6 +52,8 @@ const DoctorList = () => {
             </li>
           ))}
         </ul>
+      ) : (
+        status === 'succeeded' && doctors.length === 0 && <p className="text-xl mt-5 text-slate-500">No Doctor Available</p>
       )}
     </div>
   );
