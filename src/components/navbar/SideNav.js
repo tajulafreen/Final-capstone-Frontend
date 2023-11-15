@@ -36,7 +36,7 @@ const SideNav = () => (
           <li key={link.id}>
             <NavLink
               to={link.path}
-              className={({ isActive }) => `text-gray-700 py-2 px-4 no-underline${isActive ? ' my-active-class bg-green-500 text-white' : ''}`}
+              className={({ isActive }) => `text-gray-700 py-2 px-4 no-underline${isActive ? ' my-active-class bg-lime-500 text-white' : ''}`}
             >
               {link.text}
             </NavLink>

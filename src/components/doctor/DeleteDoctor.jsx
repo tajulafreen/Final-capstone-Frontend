@@ -33,7 +33,7 @@ const DeleteDoctor = () => {
                 <p className="font-bold text-[20px]">{doctor.name}</p>
                 <p className="text-[10px] text-gray-500 font-semi-bold md:text-[18px] md:leading-[30px]">{doctor.specialization}</p>
               </div>
-              <button type="button" className="bg-red-700 hover:bg-gray-400 text-white px-1.5 md:px-4 md:py-2 rounded-md transition-transform transform hover:scale-105  duration-500" onClick={() => { handleDelete(doctor.id); }}>
+              <button type="button" className="bg-lime-500 hover:bg-gray-400 text-white px-1.5 md:px-4 md:py-2 rounded-md transition-transform transform hover:scale-105  duration-500" onClick={() => { handleDelete(doctor.id); }}>
                 Delete
               </button>
             </div>

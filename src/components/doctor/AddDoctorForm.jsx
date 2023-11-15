@@ -90,7 +90,7 @@ const AddDoctorForm = () => {
           </div>
           <button
             type="submit"
-            className="bg-green-700 hover:bg-green-400 text-white  px-4 py-2 rounded-md focus:outline-none focus:ring focus:border-green-300 w-full"
+            className="bg-lime-500 hover:bg-lime-400 text-white  px-4 py-2 rounded-md focus:outline-none focus:ring focus:border-green-300 w-full"
           >
             Submit
           </button>
