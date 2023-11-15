@@ -20,7 +20,7 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="bg-lime-400 h-screen flex flex-col justify-center items-center">
+    <div className="bg-lime-400 flex flex-col w-[100vw] h-[100vh] justify-center items-center">
       <form className="flex mb-4" onSubmit={handleSignIn}>
         <div className="">
           <input
