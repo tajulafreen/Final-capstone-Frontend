@@ -25,55 +25,31 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <form className="bg-white p-8 shadow-md rounded-md w-96" onSubmit={handleSignUp}>
-        <h2 className="text-2xl font-semibold mb-6">Sign Up</h2>
-        <div className="mb-4">
+    <div className="bg-lime-400 h-screen flex flex-col justify-center items-center">
+      <form className="flex mb-4" onSubmit={handleSignUp}>
+        <div className="">
           <input
             type="text"
             id="name"
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
+            className="py-[.4rem] px-2 rounded-md text-[14px]"
             placeholder="Enter your name"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
-            placeholder="Enter your email"
-          />
-        </div>
-        <div className="mb-4">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
-            placeholder="Enter your password"
           />
         </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          className="bg-orange-400 font-semibold text-white px-2 py-1 rounded-md md:p-2 hover:bg-orange-600"
         >
           Sign Up
         </button>
-        <p className="mt-2">
-          have an account?
-          {' '}
-          <Link to="/login">Click here to log in</Link>
-        </p>
       </form>
-
+      <p className="text-white text-[14px] bg-orange-400 hover:bg-orange-600 px-2 py-1 rounded-md">
+        have an account?
+        {' '}
+        <Link className="text-white text-[14px] no-underline" to="/login">Click here to log in</Link>
+      </p>
     </div>
   );
 };

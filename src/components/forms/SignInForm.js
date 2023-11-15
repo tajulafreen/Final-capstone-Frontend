@@ -7,7 +7,6 @@ const SignInForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
   const handleSignIn = async (e) => {
     e.preventDefault();
@@ -21,44 +20,32 @@ const SignInForm = () => {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen">
-      <form className="bg-white p-8 shadow-md rounded-md w-96" onSubmit={handleSignIn}>
-        <h2 className="text-2xl font-semibold mb-6">Sign In</h2>
-        <div className="mb-4">
+    <div className="bg-lime-400 h-screen flex flex-col justify-center items-center">
+      <form className="flex mb-4" onSubmit={handleSignIn}>
+        <div className="">
           <input
             type="text"
             id="name"
             name="name"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
+            className="py-[.4rem] px-2 rounded-md text-[14px]"
             placeholder="Enter your email"
             required
           />
         </div>
-        <div className="mb-4">
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="mt-1 p-2 w-full border rounded-md"
-            placeholder="Enter your password"
-          />
-        </div>
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          className="bg-orange-400 text-white font-semibold px-2 py-1 rounded-md md:p-2 hover:bg-orange-600"
         >
           Sign In
         </button>
-        <p className="mt-2">
-          Don&apos;t have an account?
-          {' '}
-          <Link to="/">Click here to sign_up</Link>
-        </p>
       </form>
+      <p className="text-white text-[14px] bg-orange-400 hover:bg-orange-600 px-2 py-1 rounded-md">
+        Don&apos;t have an account?
+        {' '}
+        <Link className="text-white text-[14px] no-underline" to="/">Click here to sign_up</Link>
+      </p>
     </div>
   );
 };
