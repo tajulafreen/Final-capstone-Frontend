@@ -14,7 +14,7 @@ const DoctorList = () => {
   }, [dispatch]);
 
   return (
-    <div className="bg-gray-100 h-screen flex flex-col justify-center items-center flex-wrap">
+    <div className="bg-gray-100 flex flex-col justify-center items-center flex-wrap md:px-10 pb-[10rem]">
       <h1 className="text-[#1F1717]">Doctors List</h1>
       <span className="text-gray-400">Choose a doctor</span>
       {status === 'loading' && <p>Loading...</p>}
