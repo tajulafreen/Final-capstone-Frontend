@@ -14,16 +14,16 @@ const adminLinks = [
 ];
 
 const SocialMedia = () => (
-  <div className="absolute bottom-0 start-0 w-full">
-    <div className="flex gap-3 p-3">
-      <FaTwitter className="text-gray-700" />
-      <FaFacebookF className="text-gray-700" />
-      <TiSocialGooglePlus className="text-gray-700" />
-      <FaVimeoV className="text-gray-700" />
-      <FaPinterestP className="text-gray-700" />
+  <div className="mt-[5rem]">
+    <div className="flex justify-center items-center text-[18px] text-gray-700 gap-1 font-medium mb-2">
+      <FaTwitter />
+      <FaFacebookF />
+      <TiSocialGooglePlus />
+      <FaVimeoV />
+      <FaPinterestP />
     </div>
     <div>
-      <p className="text-sm ps-5">&copy; 2023</p>
+      <p className="text-gray-800 font-medium text-[18px] text-center">&copy;Copyright 2023</p>
     </div>
   </div>
 );
