@@ -56,7 +56,7 @@ const NewReservation = () => {
   }, [dispatch, userStatus, userId]);
 
   return (
-    <div className="bg-lime-400 mx-auto w-full h-full pt-[1rem] md:pt-[10rem]">
+    <div className="bg-lime-400 mx-auto h-screen pt-[1rem] md:pt-[10rem]">
 
       {/* Scheduling Information */}
       <div className="text-center text-white md:mx-auto p-1 md:md:p-8">
