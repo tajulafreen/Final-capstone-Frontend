@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpForm Component renders SignUpForm component 1`] = `
+<div
+  class="flex items-center justify-center h-screen"
+>
+  <form
+    class="bg-white p-8 shadow-md rounded-md w-96"
+  >
+    <h2
+      class="text-2xl font-semibold mb-6"
+    >
+      Sign Up
+    </h2>
+    <div
+      class="mb-4"
+    >
+      <input
+        class="mt-1 p-2 w-full border rounded-md"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="mb-4"
+    >
+      <input
+        class="mt-1 p-2 w-full border rounded-md"
+        id="email"
+        name="email"
+        placeholder="Enter your email"
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="mb-4"
+    >
+      <input
+        class="mt-1 p-2 w-full border rounded-md"
+        id="password"
+        name="password"
+        placeholder="Enter your password"
+        type="password"
+        value=""
+      />
+    </div>
+    <button
+      class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+      type="submit"
+    >
+      Sign Up
+    </button>
+    <p
+      class="mt-2"
+    >
+      have an account?
+       
+      <a
+        href="/login"
+      >
+        Click here to log in
+      </a>
+    </p>
+  </form>
+</div>
+`;
