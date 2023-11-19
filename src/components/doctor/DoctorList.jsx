@@ -10,17 +10,21 @@ const DoctorList = () => {
   const error = useSelector((state) => state.doctor.error);
 
   const [startIndex, setStartIndex] = useState(0);
-  const itemsPerPage = 3;
+  const itemsPerPageSmallScreen = 1;
+  const itemsPerPageMediumScreen = 3;
+
+  const getItemsPerPage = () => (window.innerWidth >= 768
+    ? itemsPerPageMediumScreen : itemsPerPageSmallScreen);
 
   const handlePrev = () => {
     if (startIndex > 0) {
-      setStartIndex(startIndex - itemsPerPage);
+      setStartIndex(startIndex - getItemsPerPage());
     }
   };
 
   const handleNext = () => {
-    if (startIndex + itemsPerPage < doctors.length) {
-      setStartIndex(startIndex + itemsPerPage);
+    if (startIndex + getItemsPerPage() < doctors.length) {
+      setStartIndex(startIndex + getItemsPerPage());
     }
   };
 
@@ -28,7 +32,11 @@ const DoctorList = () => {
     dispatch(fetchDoctors());
   }, [dispatch]);
 
-  const paginatedDoctors = doctors.slice(startIndex, startIndex + itemsPerPage);
+  const paginatedDoctors = doctors.slice(startIndex, startIndex + getItemsPerPage());
+
+  window.addEventListener('resize', () => {
+    setStartIndex(0); // Reset startIndex on window resize to prevent issues with pagination
+  });
 
   return (
     <div className="flex flex-col justify-center items-center flex-wrap">
@@ -45,49 +53,57 @@ const DoctorList = () => {
       {status === 'succeeded' && (
         <>
           <ul className="gap-[2rem] md:flex md:gap-[5rem] md:mt-10">
-            {paginatedDoctors.map((doctor) => (
-              <li key={doctor.id} className="my-[2rem] md:my-0 transition-transform transform hover:scale-110 duration-500">
-                <Link to={`/doctors/${doctor.id}`} className="no-underline">
-                  <div className="flex items-center justify-center">
-                    <img
-                      src={doctor.image}
-                      alt={doctor.name}
-                      className="rounded-full object-cover w-72 h-72"
-                    />
-                  </div>
-                  <div className="gap-0 flex flex-col justify-center items-center md:gap-1">
-                    <div className="text-[#1F1717]">
-                      <strong>
-                        {doctor.name}
-                      </strong>
+            <div className="flex flex-row gap-11">
+              <div className="d-flex align-items-center">
+                <button
+                  type="button"
+                  onClick={handlePrev}
+                  disabled={startIndex === 0}
+                  className="prev-btn btn btn-primary"
+                >
+                  &lt;
+                </button>
+              </div>
+              {paginatedDoctors.map((doctor) => (
+                <li
+                  key={doctor.id}
+                  className={`my-[2rem] md:my-0 transition-transform transform hover:scale-110 duration-500 ${
+                    window.innerWidth >= 768 ? 'md:w-1/3' : 'w-full'
+                  }`}
+                >
+                  <Link to={`/doctors/${doctor.id}`} className="no-underline">
+                    <div className="flex items-center justify-center">
+                      <img
+                        src={doctor.image}
+                        alt={doctor.name}
+                        className="rounded-full object-cover w-72 h-72"
+                      />
                     </div>
-                    <p className="text-gray-300">................................</p>
-                    <div className="text-[10px] text-gray-500 font-semi-bold md:text-[18px] md:leading-[30px]">
-                      {doctor.specialization}
+                    <div className="gap-0 flex flex-col justify-center items-center md:gap-1 mt-7">
+                      <div className="text-[#1F1717]">
+                        <h2 className="text-[25px]">
+                          {doctor.name}
+                        </h2>
+                      </div>
+                      <div className="text-[10px] text-gray-700 font-semi-bold md:text-[18px] md:leading-[30px]">
+                        {doctor.specialization}
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              </li>
-            ))}
+                  </Link>
+                </li>
+              ))}
+              <div className="d-flex align-items-center">
+                <button
+                  type="button"
+                  onClick={handleNext}
+                  disabled={startIndex + getItemsPerPage() >= doctors.length}
+                  className="next-btn btn btn-primary"
+                >
+                  &gt;
+                </button>
+              </div>
+            </div>
           </ul>
-          <div>
-            <button
-              type="button"
-              onClick={handlePrev}
-              disabled={startIndex === 0}
-              className="prev-btn"
-            >
-              &lt;
-            </button>
-            <button
-              type="button"
-              onClick={handleNext}
-              disabled={startIndex + itemsPerPage >= doctors.length}
-              className="next-btn"
-            >
-              &gt;
-            </button>
-          </div>
         </>
       )}
     </div>
