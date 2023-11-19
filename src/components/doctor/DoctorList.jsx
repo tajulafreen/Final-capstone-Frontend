@@ -59,7 +59,7 @@ const DoctorList = () => {
                   type="button"
                   onClick={handlePrev}
                   disabled={startIndex === 0}
-                  className="prev-btn bg-lime-500 text-white p-3 disabled:bg-lime-200"
+                  className="prev-btn bg-lime-500 text-white p-3 disabled:bg-lime-200 border rounded-md"
                 >
                   &lt;
                 </button>
@@ -97,7 +97,7 @@ const DoctorList = () => {
                   type="button"
                   onClick={handleNext}
                   disabled={startIndex + getItemsPerPage() >= doctors.length}
-                  className="next-btn bg-lime-500 text-white p-3 disabled:bg-lime-200"
+                  className="next-btn bg-lime-500 text-white p-3 disabled:bg-lime-200 border rounded-md"
                 >
                   &gt;
                 </button>
