@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NewReservation Component renders NewReservation component 1`] = `
+<div
+  class="flex flex-col items-center justify-center min-h-screen custom-styles"
+>
+  <div
+    class="container mx-auto max-w-screen-md p-8 reserve-div1"
+  >
+    <h2
+      class="text-2xl font-bold mt-8 mb-4"
+    >
+      Reservation Schedule Information
+    </h2>
+    <hr
+      class="reserve-hr"
+    />
+    <p
+      class="text-gray-700"
+    >
+      Our doctors are available from Monday to Friday, 9:00 AM to 5:00 PM. If you have any questions or need assistance, feel free to contact our support team at support@example.com.
+    </p>
+  </div>
+  <div
+    class="container mx-auto max-w-screen-md p-8 reserve-div2"
+  >
+    <form
+      class="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 w-full"
+    >
+      <div
+        class="flex flex-col w-full md:w-1/2"
+      >
+        <p
+          class="text-lg font-medium text-gray-600"
+          style="color: white;"
+        >
+          Date
+        </p>
+        <input
+          class="p-2 border rounded reserve-input"
+          id="date"
+          required=""
+          type="date"
+          value=""
+        />
+      </div>
+      <div
+        class="flex flex-col w-full md:w-1/2"
+      >
+        <p
+          class="text-lg font-medium text-gray-600"
+          style="color: white;"
+        >
+          City
+        </p>
+        <input
+          class="p-2 border rounded reserve-input"
+          id="city"
+          required=""
+          type="text"
+          value=""
+        />
+      </div>
+      <div
+        class="flex flex-col w-full md:w-1/2"
+      >
+        <p
+          class="text-md font-medium text-gray-600"
+          style="color: white;"
+        >
+          Choose Doctor
+        </p>
+        <select
+          class="p-2 border rounded reserve-select"
+          id="doctor"
+          required=""
+        >
+          <option
+            value=""
+          >
+            Select Doctor
+          </option>
+        </select>
+      </div>
+      <button
+        class="reserve-btn "
+        type="submit"
+      >
+        Reserve
+      </button>
+    </form>
+  </div>
+</div>
+`;
