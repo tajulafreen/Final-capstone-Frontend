@@ -30,7 +30,7 @@ const SignInForm = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-[100%] text-[#FCF5ED] first-letter:text-[16px] rounded-md py-[.7rem] px-[1.5rem] mb-4 border-none"
-            placeholder="Enter your email"
+            placeholder="Enter your name"
             required
           />
         </div>
@@ -38,7 +38,7 @@ const SignInForm = () => {
           type="submit"
           className="bg-lime-500 w-[100%] hover:bg-[#0F0F0F] font-bold px-3 py-1 rounded-md text-white"
         >
-          Sign In
+          Log In
         </button>
       </form>
       <p className="mt-1 font-bold">
