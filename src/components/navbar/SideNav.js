@@ -16,7 +16,7 @@ const adminLinks = [
 ];
 
 const SocialMedia = () => (
-  <div className="mt-[7rem]">
+  <div className="mt-[4rem] md:mt-[9rem]">
     <div className="flex justify-center items-center text-[18px] text-gray-700 gap-1 font-medium mb-2">
       <FaTwitter />
       <FaFacebookF />
@@ -46,7 +46,7 @@ const SideNav = () => {
   return (
     <div className={`menu-bar ${isOpen ? 'open-btn' : 'close-btn'}`}>
       <div className="hidden md:block fixed h-screen bg-white md:border-r md:border-gray-300">
-        <ul className="md:flex md:flex-col md:items-end font-bold text-[#000000] md:gap-4 uppercase mt-[10rem]">
+        <ul className="md:flex md:flex-col md:items-end font-bold text-[#000000] uppercase md:gap-4 mt-[10rem]">
           {adminLinks.map((link) => (
             <li key={link.id}>
               <NavLink
@@ -60,12 +60,12 @@ const SideNav = () => {
         </ul>
         <SocialMedia />
       </div>
-      <button type="button" onClick={handleToggle} className="menu-icon">
+      <button type="button" onClick={handleToggle} className="menu-icon text-[#DADDB1] mb-6">
         {isOpen ? <FaTimes className="close" /> : <FaBars className="open" />}
       </button>
       {isOpen && (
         <div className="fabarLinks">
-          <ul className="flex flex-col items-end font-bold text-[#000000] gap-4 uppercase mt-[10rem]">
+          <ul className="flex flex-col items-center justify-center font-bold text-[#000000] gap-4 uppercase mt-[10rem]">
             {adminLinks.map((link) => (
               <li key={link.id} className="links">
                 <NavLink

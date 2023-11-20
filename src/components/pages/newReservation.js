@@ -63,8 +63,7 @@ const NewReservation = () => {
 
         {/* Scheduling Information */}
         <div className="text-center text-white md:mx-auto p-1 md:md:p-8">
-          <h2 className="">Reservation Schedule Information</h2>
-          <hr className="w-[90%] border-3 border-white" />
+          <h2 className="font-bold">Reservation Schedule Information</h2>
           <p className="">
             Our doctors are available from Monday to Friday,
             9:00 AM to 5:00 PM. If you have any questions

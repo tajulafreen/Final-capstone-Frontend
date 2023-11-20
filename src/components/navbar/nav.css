@@ -1,10 +1,4 @@
 @media only screen and (max-width: 768px) {
-  .menu-bar {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-
   .open-btn {
     background-color: #f5f5dc;
     width: 100%;
@@ -40,7 +34,8 @@
   }
 
   .close {
-    margin-left: auto;
+    display: flex;
+    justify-content: flex-end;
   }
 }
 
