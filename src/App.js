@@ -5,7 +5,7 @@ import {
 import { ToastContainer } from 'react-toastify';
 import SignInForm from './components/forms/SignInForm';
 import SignUpForm from './components/forms/SignUpForm';
-import SideNav from './components/navbar/SideNav';
+// import SideNav from './components/navbar/SideNav';
 import DoctorList from './components/doctor/DoctorList';
 import AddDoctorForm from './components/doctor/AddDoctorForm';
 import DoctorDetails from './components/doctor/DoctorDetails';
@@ -17,7 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const App = () => (
   <Router>
     <div className="flex">
-      <SideNav />
+      {/* <SideNav /> */}
       <div className="flex-1 md:ml-40 p-8">
         <Routes>
           <Route path="/" element={<SignUpForm />} />
