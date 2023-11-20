@@ -42,10 +42,6 @@
   .close {
     margin-left: auto;
   }
-
-  .open-links {
-    display: block;
-  }
 }
 
 @media only screen and (min-width: 769px) {
