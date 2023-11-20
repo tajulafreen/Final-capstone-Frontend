@@ -25,8 +25,8 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="bg-lime-400 h-screen flex flex-col justify-center items-center">
-      <form className="flex mb-4" onSubmit={handleSignUp}>
+    <div className="flex flex-col justify-center items-center mt-[7rem]">
+      <form className="bg-[#F5EEC8] rounded-md shadow py-[7rem] px-[3rem]" onSubmit={handleSignUp}>
         <div className="">
           <input
             type="text"
@@ -34,21 +34,21 @@ const SignUpForm = () => {
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="py-[.4rem] px-2 rounded-md text-[14px]"
+            className="w-[100%] text-[#FCF5ED] first-letter:text-[16px] rounded-md py-[.7rem] px-[1.5rem] mb-4 border-none"
             placeholder="Enter your name"
           />
         </div>
         <button
           type="submit"
-          className="bg-orange-400 font-semibold text-white px-2 py-1 rounded-md md:p-2 hover:bg-orange-600"
+          className="bg-lime-500 w-[100%] hover:bg-[#0F0F0F] font-bold px-3 py-1 rounded-md text-white"
         >
           Sign Up
         </button>
       </form>
-      <p className="text-white text-[14px] bg-orange-400 hover:bg-orange-600 px-2 py-1 rounded-md">
+      <p className="mt-1 font-bold">
         have an account?
         {' '}
-        <Link className="text-white text-[14px] no-underline" to="/login">Click here to log in</Link>
+        <Link className="no-underline text-black" to="/login">Click here to log in</Link>
       </p>
     </div>
   );
