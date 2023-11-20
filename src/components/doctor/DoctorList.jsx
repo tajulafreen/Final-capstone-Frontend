@@ -11,7 +11,7 @@ const DoctorList = () => {
 
   const [startIndex, setStartIndex] = useState(0);
   const itemsPerPageSmallScreen = 1;
-  const itemsPerPageMediumScreen = 3;
+  const itemsPerPageMediumScreen = 2;
 
   const getItemsPerPage = () => (window.innerWidth >= 768
     ? itemsPerPageMediumScreen : itemsPerPageSmallScreen);
@@ -39,7 +39,7 @@ const DoctorList = () => {
   });
 
   return (
-    <div className="flex flex-col justify-center items-center flex-wrap">
+    <div className="flex flex-col justify-center items-center">
       <h1 className="text-[#1F1717]">Doctors List</h1>
       <span className="text-gray-400">Choose a doctor</span>
       {status === 'loading' && <p>Loading...</p>}
@@ -49,17 +49,16 @@ const DoctorList = () => {
           {error}
         </p>
       )}
-
-      {status === 'succeeded' && (
+      {(status === 'succeeded' && doctors.length > 0) ? (
         <>
           <ul className="gap-[2rem] md:flex md:gap-[5rem] md:mt-10">
-            <div className="flex flex-row gap-11">
-              <div className="d-flex align-items-center">
+            <div className="flex md:flex-row gap-11">
+              <div className="flex align-items-center">
                 <button
                   type="button"
                   onClick={handlePrev}
                   disabled={startIndex === 0}
-                  className="prev-btn bg-lime-500 text-white p-3 disabled:bg-lime-200 border rounded-md"
+                  className="prev-btn bg-lime-500 text-white p-1.5 md:p-3 disabled:bg-lime-200 border rounded-md"
                 >
                   &lt;
                 </button>
@@ -67,7 +66,7 @@ const DoctorList = () => {
               {paginatedDoctors.map((doctor) => (
                 <li
                   key={doctor.id}
-                  className={`my-[2rem] md:my-0 transition-transform transform hover:scale-110 duration-500 ${
+                  className={`my-[2rem] md:my-0 md:transition-transform md:transform md:hover:scale-110 md:duration-500 ${
                     window.innerWidth >= 768 ? 'md:w-1/3' : 'w-full'
                   }`}
                 >
@@ -97,7 +96,7 @@ const DoctorList = () => {
                   type="button"
                   onClick={handleNext}
                   disabled={startIndex + getItemsPerPage() >= doctors.length}
-                  className="next-btn bg-lime-500 text-white p-3 disabled:bg-lime-200 border rounded-md"
+                  className="next-btn bg-lime-500 text-white p-1.5 md:p-3 disabled:bg-lime-200 border rounded-md"
                 >
                   &gt;
                 </button>
@@ -105,6 +104,10 @@ const DoctorList = () => {
             </div>
           </ul>
         </>
+      ) : (
+        (status === 'succeeded' && doctors.length === 0) && (
+          <p className="text-xl mt-5 text-slate-500">No Doctor Available</p>
+        )
       )}
     </div>
   );

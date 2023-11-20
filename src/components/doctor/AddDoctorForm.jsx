@@ -13,24 +13,28 @@ const AddDoctorForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (name && specialization && bio && image && fee) {
-      dispatch(createDoctor({
+      await dispatch(createDoctor({
         name,
         specialization,
         bio,
         image,
         fee,
       }));
-      toast.success('Doctor added successfuly');
+
+      toast.success('Doctor added successfully');
     } else {
       toast.error('Please fill all fields before you submit');
     }
+
     setName('');
     setSpecialization('');
     setBio('');
     setFee('');
     setImage('');
   };
+
   return (
     <div className="max-w-md mx-auto mt-8 p-6 bg-white shadow-md rounded-md">
       <h2 className="text-2xl font-bold mb-4 text-center">Add New Doctor</h2>
@@ -90,7 +94,7 @@ const AddDoctorForm = () => {
           </div>
           <button
             type="submit"
-            className="bg-green-700 hover:bg-green-400 text-white  px-4 py-2 rounded-md focus:outline-none focus:ring focus:border-green-300 w-full"
+            className="bg-lime-500 hover:bg-lime-400 text-white px-4 py-2 rounded-md focus:outline-none focus:ring focus:border-green-300 w-full"
           >
             Submit
           </button>

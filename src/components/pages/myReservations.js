@@ -18,11 +18,11 @@ const MyReservations = () => {
   };
 
   return (
-    <div className="container mx-auto mt-8">
-      <h2 className="text-2xl font-bold mb-4 my-reserve-head">My Reservations</h2>
-      <table className="w-full border-collapse">
+    <div className="flex flex-col items-center pt-[1rem] md:pt-[5rem]">
+      <h2 className="text-[#1a1a1a]">My Reservations</h2>
+      <table className="w-[95%] border-collapse">
         <thead>
-          <tr className="bg-gray-200">
+          <tr className="bg-lime-500">
             <th className="py-2 px-4 border">Id</th>
             <th className="py-2 px-4 border">Date</th>
             <th className="py-2 px-4 border">City</th>
@@ -40,7 +40,7 @@ const MyReservations = () => {
               <td className="py-2 px-4 border">{reservation.doctor.name}</td>
               {/* Add more cells based on reservation properties */}
               <td className="py-2 px-4 border">
-                <button type="button" onClick={() => handleCancelReservation(reservation.id)}>
+                <button type="button" className="bg-lime-500 text-white text-[10px] md:text-[14px] py-1 rounded-[10px]" onClick={() => handleCancelReservation(reservation.id)}>
                   Cancel Reservation
                 </button>
               </td>
