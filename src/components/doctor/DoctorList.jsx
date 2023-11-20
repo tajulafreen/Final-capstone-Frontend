@@ -49,7 +49,6 @@ const DoctorList = () => {
           {error}
         </p>
       )}
-
       {(status === 'succeeded' && doctors.length > 0) ? (
         <>
           <ul className="gap-[2rem] md:flex md:gap-[5rem] md:mt-10">
