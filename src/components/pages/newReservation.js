@@ -59,22 +59,22 @@ const NewReservation = () => {
   return (
     <>
       <SideNav />
-      <div className="bg-lime-400 mx-auto h-screen pt-[1rem] md:pt-[10rem]">
+      <div className="bg-lime-400 px-10  h-screen pt-[1rem]  md:pl-[14rem] md:pt-[8rem]">
 
         {/* Scheduling Information */}
-        <div className="text-center text-white md:mx-auto p-1 md:md:p-8">
+        <div className="text-center text-white md:mx-auto p-1 md:pl-24 md:p-8">
           <h2 className="font-bold">Reservation Schedule Information</h2>
-          <p className="">
+          <p className="text-center">
             Our doctors are available from Monday to Friday,
             9:00 AM to 5:00 PM. If you have any questions
             <br />
             or need assistance,feel free to contact our support team at support@example.com.
           </p>
         </div>
-        <div className="mx-auto max-w-screen-md p-8">
-          <form onSubmit={handleSubmit} className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-4 w-full">
+        <div className="mx-auto max-w-screen-md">
+          <form onSubmit={handleSubmit} className="flex flex-col space-y-4 md:space-y-0 md:space-x-4 md:w-[80%] justify-center items-center md:pl-[6rem]">
             {/* Date Input */}
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full  md:ml-6">
               <p className="text-lg font-medium text-white">
                 Date
               </p>
@@ -89,7 +89,7 @@ const NewReservation = () => {
             </div>
 
             {/* City Input */}
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full  md:ml-9">
               <p className="text-lg font-medium text-white">
                 City
               </p>
@@ -104,7 +104,7 @@ const NewReservation = () => {
             </div>
 
             {/* Doctor Selection */}
-            <div className="flex flex-col w-full">
+            <div className="flex flex-col w-full  md:ml-9">
               <p className="text-md font-medium text-white">
                 Choose Doctor
               </p>
@@ -122,21 +122,23 @@ const NewReservation = () => {
                   </option>
                 ))}
               </select>
+              <div className="flex justify-center">
+                <button
+                  type="submit"
+                  className={`reserve-btn bg-gray-200 px-3 w-40 h-11 rounded mt-5 text-lime-500 font-[400] hover:bg-lime-500 hover:text-white ${
+                    isLoading ? 'cursor-not-allowed' : ''
+                  }`}
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Reserving...' : 'Reserve'}
+                </button>
+              </div>
             </div>
 
             {/* Error Message */}
             {error && <p className="text-red-500">{error}</p>}
 
             {/* Submit Button */}
-            <button
-              type="submit"
-              className={`reserve-btn bg-gray-200 px-3 rounded-[20px] text-lime-500 font-[400] hover:bg-lime-500 hover:text-white ${
-                isLoading ? 'cursor-not-allowed' : ''
-              }`}
-              disabled={isLoading}
-            >
-              {isLoading ? 'Reserving...' : 'Reserve'}
-            </button>
           </form>
         </div>
       </div>
