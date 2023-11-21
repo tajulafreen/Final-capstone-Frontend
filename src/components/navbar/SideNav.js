@@ -17,7 +17,7 @@ const adminLinks = [
 ];
 
 const SocialMedia = () => (
-  <div className="mt-[10rem] md:mt-[11rem]">
+  <div className="mt-[10rem] md:mt-[9rem]">
     <div className="flex justify-center items-center text-[18px] text-gray-700 gap-3 font-medium ">
       <FaTwitter />
       <FaFacebookF />
