@@ -45,7 +45,7 @@ const SignInForm = () => {
       <p className="mt-1 font-bold">
         Don&apos;t have an account?
         {' '}
-        <Link className="no-underline text-black" to="/login">Click here to sign_up</Link>
+        <Link className="no-underline text-black" to="/">Click here to sign_up</Link>
       </p>
     </div>
   );

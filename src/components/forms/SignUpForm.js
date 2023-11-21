@@ -22,7 +22,8 @@ const SignUpForm = () => {
 
   return (
     <div className="flex flex-col justify-center items-center mt-[7rem]">
-      <form className="bg-[#F5EEC8] rounded-md shadow py-[7rem] px-[3rem]" onSubmit={handleSignUp}>
+      <h1>Doctor Appointment</h1>
+      <form className="bg-[#F5EEC8] rounded-md shadow py-[7rem] px-[3rem] mt-7" onSubmit={handleSignUp}>
         <div className="">
           <input
             type="text"
