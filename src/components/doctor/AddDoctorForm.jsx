@@ -11,7 +11,7 @@ const AddDoctorForm = () => {
   const [bio, setBio] = useState('');
   const [image, setImage] = useState('');
   const [fee, setFee] = useState('');
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
