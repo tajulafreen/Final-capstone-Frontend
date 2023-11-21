@@ -10,12 +10,7 @@ import {
 import SideNav from '../navbar/SideNav';
 
 const DoctorDetails = () => {
-  const { doctorId } = useParams();
-  const dispatch = useDispatch();
-  const doctors = useSelector(selectDoctors);
-  const status = useSelector(selectStatus);
-  const error = useSelector(selectError);
-  const navigate = useNavigate();
+  
 
   useEffect(() => {
     dispatch(fetchDoctorById(doctorId));
