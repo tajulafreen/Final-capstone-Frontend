@@ -40,13 +40,6 @@ const DeleteDoctor = () => {
                   <h2 className="text-[20px] md:text-[30px] font-semibold">{doctor.name}</h2>
                   <p className=" text-gray-500 text-[16px] md:text-[20px] font-[400] md:leading-[30px] md:mb-10">{doctor.specialization}</p>
                 </div>
-                <button
-                  type="button"
-                  className="bg-lime-500 hover:bg-red-500 text-white px-3 md:px-10 py-2 rounded-md transition-transform transform hover:scale-105 duration-500"
-                  onClick={() => { handleDelete(doctor.id); }}
-                >
-                  Delete
-                </button>
               </div>
             </div>
           ))
