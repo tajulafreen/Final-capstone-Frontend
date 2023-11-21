@@ -31,7 +31,7 @@
 
 It's an Online Doctor Reservation web application designed to provide users with the ability to reserve, view, and manage doctors and doctor appointment reservation . The system aims to streamline the process of finding and booking doctors from various locations
 
-#### Link to [Backend](https://github.com/tajulafreen/Final-capstone-Backend)
+#### Link to [Backend](https://github.com/tajulafreen/Final-capstone-Backend/pull/23)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -80,14 +80,14 @@ In order to run this project you need:
 - Installed Redux
 - Create a local directory that you want to clone the repository.
 - Open the command prompt in the created directory.
-- On the terminal run this command git clone git@github.com:tajulafreen/Final-capstone-Backend.git
+- On the terminal run this command git clone git@github.com:tajulafreen/Final-capstone-Frontend.git
 
 ### Setup
 
 Clone this repository to your desired folder:
 
 ```sh
-git clone git@github.com:tajulafreen/Final-capstone-Backend.git
+git clone git@github.com:tajulafreen/Final-capstone-Frontend.git
 ```
 
 ```sh
