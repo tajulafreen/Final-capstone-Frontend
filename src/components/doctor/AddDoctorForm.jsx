@@ -5,13 +5,6 @@ import { createDoctor } from '../../redux/doctor/doctorSlice';
 import SideNav from '../navbar/SideNav';
 
 const AddDoctorForm = () => {
-  const dispatch = useDispatch();
-  const [name, setName] = useState('');
-  const [specialization, setSpecialization] = useState('');
-  const [bio, setBio] = useState('');
-  const [image, setImage] = useState('');
-  const [fee, setFee] = useState('');
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
