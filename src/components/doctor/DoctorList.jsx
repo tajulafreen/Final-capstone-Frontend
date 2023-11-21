@@ -12,7 +12,7 @@ const DoctorList = () => {
 
   const [startIndex, setStartIndex] = useState(0);
   const itemsPerPageSmallScreen = 1;
-  const itemsPerPageMediumScreen = 2;
+  const itemsPerPageMediumScreen = 3;
 
   const getItemsPerPage = () => (window.innerWidth >= 768
     ? itemsPerPageMediumScreen : itemsPerPageSmallScreen);
@@ -42,8 +42,8 @@ const DoctorList = () => {
   return (
     <>
       <SideNav />
-      <div className="flex flex-col justify-center items-center">
-        <h1 className="text-[#1F1717]">Doctors List</h1>
+      <div className="flex flex-col justify-center items-center md:pl-[15rem] md:pr-[3rem] pr-3">
+        <h1 className="text-[#1F1717] md:pt-5">Doctors List</h1>
         <span className="text-gray-400">Choose a doctor</span>
         {status === 'loading' && <p>Loading...</p>}
         {status === 'failed' && (
@@ -78,16 +78,16 @@ const DoctorList = () => {
                         <img
                           src={doctor.image}
                           alt={doctor.name}
-                          className="rounded-full object-cover w-72 h-72"
+                          className="rounded-full object-cover w-72 h-72 max-[967px]:w-62"
                         />
                       </div>
                       <div className="gap-0 flex flex-col justify-center items-center md:gap-1 mt-7">
                         <div className="text-[#1F1717]">
-                          <h2 className="text-[25px]">
+                          <h2 className="text-[30px] text-center">
                             {doctor.name}
                           </h2>
                         </div>
-                        <div className="text-[10px] text-gray-700 font-semi-bold md:text-[18px] md:leading-[30px]">
+                        <div className="text-[20px] text-gray-700 font-semi-bold md:text-[18px] md:leading-[30px] text-center">
                           {doctor.specialization}
                         </div>
                       </div>
