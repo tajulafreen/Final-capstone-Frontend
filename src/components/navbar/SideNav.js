@@ -76,7 +76,7 @@ const SideNav = () => {
       </button>
       {isOpen && (
         <div className="fabarLinks">
-          <ul className="flex flex-col items-center justify-center font-bold text-[#000000] gap-4 uppercase mt-[10rem]">
+          <ul className="flex flex-col items-center justify-center font-bold text-[#000000] gap-4 uppercase md:mt-[10rem]">
             {adminLinks.map((link) => (
               <li key={link.id} className="links">
                 <NavLink
