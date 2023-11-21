@@ -17,9 +17,9 @@ const MyReservations = () => {
   return (
     <>
       <SideNav />
-      <div className="flex flex-col items-center pt-[1rem] md:pt-[5rem]">
+      <div className="flex flex-col items-center pt-[1rem] md:pt-[5rem] md:pl-[12rem] px-10">
         <h2 className="text-[#1a1a1a]">My Reservations</h2>
-        <table className="md:w-[60%] border-collapse">
+        <table className="md:w-[80%] border-collapse mt-7 ">
           <thead>
             <tr className="bg-lime-500">
               <th className="py-2 px-4 border">Id</th>
@@ -36,7 +36,6 @@ const MyReservations = () => {
                 <td className="py-2 px-4 border">{reservation.date}</td>
                 <td className="py-2 px-4 border">{reservation.city}</td>
                 <td className="py-2 px-4 border">{reservation.doctor.name}</td>
-                {/* Add more cells based on reservation properties */}
               </tr>
             ))}
           </tbody>
