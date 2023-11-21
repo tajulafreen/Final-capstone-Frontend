@@ -126,6 +126,7 @@ Collaborators.
 - Proper authentication
 - Authorization
 
+
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
