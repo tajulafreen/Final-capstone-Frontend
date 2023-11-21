@@ -3,7 +3,7 @@
 <div align="center">
 
   <br/>
-  <h1>Final-capstone-Frontend</h1>
+  <h1>Doctor Appointment</h1>
 
 </div>
 

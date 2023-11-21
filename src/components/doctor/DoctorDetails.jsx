@@ -7,6 +7,7 @@ import {
   selectStatus,
   selectError,
 } from '../../redux/doctor/doctorSlice';
+import SideNav from '../navbar/SideNav';
 
 const DoctorDetails = () => {
   const { doctorId } = useParams();
@@ -59,41 +60,48 @@ const DoctorDetails = () => {
   const selectedDoctor = doctors[0];
 
   return (
-    <div className="grid p-[.2rem] md:grid-cols-2 md:px-[3rem] md:py-[6rem]">
-      <div className="">
-        <img src={selectedDoctor.image} alt={selectedDoctor.name} className="object-cover w-[95%]" />
-      </div>
-
-      <div className="flex flex-col gap-2 md:gap-3.5 w-full mt-2 md:mt-5">
-        <h2 className="text-[10px] md:text-[16px] font-semibold">
-          {selectedDoctor.name}
-        </h2>
-        <p className="text-[10px] md:text-[16px] font-[400]">
-          Specialization:
-          {' '}
-          <span>{selectedDoctor.specialization}</span>
-        </p>
-        <p className="text-[10px] md:text-[16px] font-[400] bg-gray-300 px-[.5rem] py-1 md:px-[1rem] md:py-1">
-          Fee:
-          {' '}
-          <span className="ml-[1rem] md:ml-[4rem]">{selectedDoctor.fee}</span>
-        </p>
-        <p className="text-[10px] md:text-[16px] font-[400]">
-          Bio:
-          {' '}
-          <span>{selectedDoctor.bio}</span>
-        </p>
-        <div>
-          <button
-            className="bg-lime-500 hover:bg-green-500 font-[400] md:font-semibold px-[2.5rem] py-[.4rem] md:px-[5rem] md:py-2 text-white rounded-[10px] transition-transform transform hover:scale-110 hover:text-[400] duration-500"
-            type="button"
-            onClick={() => navigate('/New-reservation')}
-          >
-            Reserve
-          </button>
+    <>
+      <SideNav />
+      <div className="justify-center">
+        <h1 className="text-center mb-3 md:pl-[12rem] text-30px font-semi-bold">Doctor Details</h1>
+        <div className="flex md:flex-row flex-col md:pr-[5rem] md:pl-[18rem] md:gap-16 items-center ">
+          <div>
+            <img src={selectedDoctor.image} alt={selectedDoctor.name} className="rounded-lg shadow-md object-cover w-72 h-72 md:w-96 md:h-96" />
+          </div>
+          <div className="max-[768px]:w-72 ">
+            <div className="flex flex-col gap-2 md:gap-3.5 w-full mt-2 md:mt-5">
+              <h2 className="text-[20px] md:text-[30px] font-semibold">
+                {selectedDoctor.name}
+              </h2>
+              <p className="text-[16px] md:text-[20px] font-[400]">
+                <strong>Specialization:</strong>
+                {' '}
+                <span>{selectedDoctor.specialization}</span>
+              </p>
+              <p className="text-[16px] md:text-[18px] w-44 font-[400] bg-gray-300 px-[.5rem]  md:px-[1rem] md:py-1 md:w-52">
+                Fee:
+                {' '}
+                <span className="ml-[.5rem] md:ml-[4rem]">{selectedDoctor.fee}</span>
+              </p>
+              <p className="text-[16px] md:text-[20px] font-[400]">
+                <strong>Bio:</strong>
+                {' '}
+                <span>{selectedDoctor.bio}</span>
+              </p>
+              <div>
+                <button
+                  className="bg-lime-500 hover:bg-green-500 font-[400] md:font-semibold px-[2.5rem] py-[.4rem] md:px-[5rem] md:py-2 text-white rounded-[10px] transition-transform transform hover:scale-110 hover:text-[400] duration-500"
+                  type="button"
+                  onClick={() => navigate('/New-reservation')}
+                >
+                  Reserve
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

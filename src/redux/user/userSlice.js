@@ -13,7 +13,7 @@ export const signUpUser = createAsyncThunk('user/signUp', async (userData) => {
 export const signInUser = createAsyncThunk('user/signIn', async (userData) => {
   try {
     const response = await axios.post('http://localhost:3000/login', userData);
-
+    console.log(response.data);
     return response.data;
   } catch (error) {
     if (error.response && error.response.status === 401) {
@@ -27,7 +27,11 @@ export const signInUser = createAsyncThunk('user/signIn', async (userData) => {
 const userSlice = createSlice({
   name: 'user',
   initialState: { user: null, status: 'idle', error: null },
-  reducers: {},
+  reducers: {
+    logout: (state) => {
+      state.user = null;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(signUpUser.fulfilled, (state, action) => {
@@ -60,3 +64,4 @@ export const selectStatus = (state) => state.user.status;
 export const selectError = (state) => state.user.error;
 
 export default userSlice.reducer;
+export const { logout } = userSlice.actions;
