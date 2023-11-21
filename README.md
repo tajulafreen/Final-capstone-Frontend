@@ -113,12 +113,6 @@ Collaborators.
 👤 **Tajul Afreen**
 - GitHub: [@githubhandle](https://github.com/tajulafreen)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/tajul-afreen/)
- 
-
-👤 **Foga Kater Amos**
-
-- GitHub: [@katfogy](https://github.com/katfogy)
-- LinkedIn: [foga](https://www.linkedin.com/in/foga/)
 
 👤 **Diana Beki**
 
