@@ -119,11 +119,6 @@ Collaborators.
 - GitHub: [Diana Beki](https://github.com/DianaBeki)
 - LinkedIn: [Diana Beki](https://www.linkedin.com/in/diana-beki-b49684230/)
 
-
-👤 **Kiko**
-
-- GitHub: [@kit0-0](https://github.com/kit0-0)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 # 🔭 Future Features:
