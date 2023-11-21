@@ -5,7 +5,34 @@ import { fetchDoctors } from '../../redux/doctor/doctorSlice';
 import SideNav from '../navbar/SideNav';
 
 const DoctorList = () => {
-  
+  const dispatch = useDispatch();
+  const doctors = useSelector((state) => state.doctor.doctors);
+  const status = useSelector((state) => state.doctor.status);
+  const error = useSelector((state) => state.doctor.error);
+
+  const [startIndex, setStartIndex] = useState(0);
+  const itemsPerPageSmallScreen = 1;
+  const itemsPerPageMediumScreen = 3;
+
+  const getItemsPerPage = () => (window.innerWidth >= 768
+    ? itemsPerPageMediumScreen : itemsPerPageSmallScreen);
+
+  const handlePrev = () => {
+    if (startIndex > 0) {
+      setStartIndex(startIndex - getItemsPerPage());
+    }
+  };
+
+  const handleNext = () => {
+    if (startIndex + getItemsPerPage() < doctors.length) {
+      setStartIndex(startIndex + getItemsPerPage());
+    }
+  };
+
+  useEffect(() => {
+    dispatch(fetchDoctors());
+  }, [dispatch]);
+
   const paginatedDoctors = doctors.slice(startIndex, startIndex + getItemsPerPage());
 
   window.addEventListener('resize', () => {
