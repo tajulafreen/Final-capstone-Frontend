@@ -32,25 +32,7 @@ const SocialMedia = () => (
 );
 
 const SideNav = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleClick = () => {
-    if (window.innerWidth <= 768) {
-      setIsOpen(false);
-    }
-  };
-
-  const handleLogout = () => {
-    dispatch(logout);
-    navigate('/login');
-  };
-
+  
   return (
     <div className={`menu-bar ${isOpen ? 'open-btn' : 'close-btn'}`}>
       <div className="hidden md:block fixed h-screen bg-white md:border-r md:border-gray-300">
