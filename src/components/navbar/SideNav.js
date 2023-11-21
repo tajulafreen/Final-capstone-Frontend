@@ -17,8 +17,8 @@ const adminLinks = [
 ];
 
 const SocialMedia = () => (
-  <div className="mt-[2rem] md:mt-[9rem]">
-    <div className="flex justify-center items-center text-[18px] text-gray-700 gap-1 font-medium mb-2">
+  <div className="mt-[10rem] md:mt-[12rem]">
+    <div className="flex justify-center items-center text-[18px] text-gray-700 gap-3 font-medium ">
       <FaTwitter />
       <FaFacebookF />
       <TiSocialGooglePlus />
@@ -26,7 +26,7 @@ const SocialMedia = () => (
       <FaPinterestP />
     </div>
     <div>
-      <p className="text-gray-800 font-medium text-[18px] text-center">&copy;Copyright 2023</p>
+      <p className="text-gray-800 font-medium text-[18px] text-center mt-4">&copy;Copyright 2023</p>
     </div>
   </div>
 );
@@ -54,7 +54,7 @@ const SideNav = () => {
   return (
     <div className={`menu-bar ${isOpen ? 'open-btn' : 'close-btn'}`}>
       <div className="hidden md:block fixed h-screen bg-white md:border-r md:border-gray-300">
-        <ul className="md:flex md:flex-col md:items-end font-bold text-[#000000] uppercase md:gap-4 mt-[10rem]">
+        <ul className="md:flex md:flex-col md:items-end font-bold uppercase md:gap-4 mt-[10rem]">
           {adminLinks.map((link) => (
             <li key={link.id}>
               <NavLink
@@ -65,7 +65,7 @@ const SideNav = () => {
               </NavLink>
             </li>
           ))}
-          <button type="button" className="d:flex md:flex-col md:items-end hover:bg-lime-500 py-2 px-4 text-[#000000] font-bold hover:text-white" onClick={handleLogout}>
+          <button type="button" className="d:flex md:flex-col md:items-end hover:bg-lime-500 py-2 px-4 text-gray-800 font-bold hover:text-white" onClick={handleLogout}>
             LOGOUT
           </button>
         </ul>
@@ -76,7 +76,7 @@ const SideNav = () => {
       </button>
       {isOpen && (
         <div className="fabarLinks">
-          <ul className="flex flex-col items-center justify-center font-bold text-[#000000] gap-4 uppercase md:mt-[10rem]">
+          <ul className="flex flex-col items-center justify-center font-bold  gap-4 uppercase md:mt-[10rem]">
             {adminLinks.map((link) => (
               <li key={link.id} className="links">
                 <NavLink
@@ -88,7 +88,7 @@ const SideNav = () => {
                 </NavLink>
               </li>
             ))}
-            <button type="button" className="bg-lime-500 py-2 px-4 text-[#000000] font-bold hover:text-white" onClick={handleLogout}>
+            <button type="button" className=" py-2 px-4 text-gray-800  font-bold hover:text-white" onClick={handleLogout}>
               LOGOUT
             </button>
             <SocialMedia />

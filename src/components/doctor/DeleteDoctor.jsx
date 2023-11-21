@@ -19,7 +19,7 @@ const DeleteDoctor = () => {
     <>
       <SideNav />
       <div className="text-center">
-        <h2 className="m-7 font-bold text-25px font-semi-bold md:mb-5 text-center md:pl-[9rem]">Delete Doctor</h2>
+        <h2 className="m-7 font-bold text-25px font-semi-bold md:mb-7 text-center md:pl-[9rem]">Delete Doctor</h2>
 
         {status === 'loading' && <p>Loading...</p>}
         {status === 'failed' && (
@@ -37,8 +37,8 @@ const DeleteDoctor = () => {
               <img src={doctor.image} alt={doctor.name} className="rounded-full object-cover w-72 h-72 max-[967px]:w-62" />
               <div>
                 <div>
-                  <p className="font-bold text-[20px]">{doctor.name}</p>
-                  <p className="text-[10px] text-gray-500 font-semi-bold md:text-[18px] md:leading-[30px] md:mb-10">{doctor.specialization}</p>
+                  <h2 className="text-[20px] md:text-[30px] font-semibold">{doctor.name}</h2>
+                  <p className=" text-gray-500 text-[16px] md:text-[20px] font-[400] md:leading-[30px] md:mb-10">{doctor.specialization}</p>
                 </div>
                 <button
                   type="button"
