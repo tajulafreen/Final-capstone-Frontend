@@ -33,16 +33,16 @@ const DeleteDoctor = () => {
           <h1 className="text-xl mt-20 text-slate-500">No doctors Added!!</h1>
         ) : (
           doctors.map((doctor) => (
-            <div key={doctor.id} className="flex flex-col justify-center items-center py-[.8rem] md:gap-5 md:grid md:grid-cols-2 md:px-[8rem] md:py-[1.2rem]">
-              <img src={doctor.image} alt={doctor.name} className="object-cover w-83" />
+            <div key={doctor.id} className="flex flex-col justify-center items-center py-[.8rem] gap-[1rem] md:grid md:grid-cols-2 md:px-[18rem] md:py-[1.2rem]">
+              <img src={doctor.image} alt={doctor.name} className="object-cover" />
               <div>
                 <div>
                   <p className="font-bold text-[20px]">{doctor.name}</p>
-                  <p className="text-[10px] text-gray-500 font-semi-bold md:text-[18px] md:leading-[30px]">{doctor.specialization}</p>
+                  <p className="text-[10px] text-gray-500 font-semi-bold md:text-[18px] md:leading-[30px] md:mb-10">{doctor.specialization}</p>
                 </div>
                 <button
                   type="button"
-                  className="bg-lime-500 hover:bg-gray-400 text-white px-1.5 md:px-4 md:py-2 rounded-md transition-transform transform hover:scale-105 duration-500"
+                  className="bg-lime-500 hover:bg-gray-400 text-white px-3 md:px-10 py-2 rounded-md transition-transform transform hover:scale-105 duration-500"
                   onClick={() => { handleDelete(doctor.id); }}
                 >
                   Delete
