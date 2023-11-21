@@ -6,13 +6,13 @@ import { signInUser } from '../../redux/user/userSlice';
 const SignInForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
+  const [name, setName] = useState('');
 
   const handleSignIn = async (e) => {
     e.preventDefault();
 
     try {
-      await dispatch(signInUser({ name: email }));
+      await dispatch(signInUser({ name }));
       navigate('/doctors');
     } catch (error) {
       console.error('Sign In Error:', error);
@@ -21,16 +21,17 @@ const SignInForm = () => {
 
   return (
     <div className="flex flex-col justify-center items-center mt-[7rem]">
-      <form className="bg-[#F5EEC8] rounded-md shadow py-[7rem] px-[3rem]" onSubmit={handleSignIn}>
+      <h1>Doctor Appointment</h1>
+      <form className="bg-[#F5EEC8] rounded-md shadow py-[7rem] px-[3rem] mt-7" onSubmit={handleSignIn}>
         <div className="">
           <input
             type="text"
             id="name"
             name="name"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             className="w-[100%] text-[#FCF5ED] first-letter:text-[16px] rounded-md py-[.7rem] px-[1.5rem] mb-4 border-none"
-            placeholder="Enter your email"
+            placeholder="Enter your name"
             required
           />
         </div>

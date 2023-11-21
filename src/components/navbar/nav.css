@@ -16,8 +16,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
-    font-size: 24px;
+    color: rgb(132 204 22);
+    font-size: 28px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 0;
   }
 
   .fabarLinks {
