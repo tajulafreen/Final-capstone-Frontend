@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import {
   FaTwitter, FaFacebookF, FaPinterestP, FaVimeoV, FaBars, FaTimes,
 } from 'react-icons/fa';
 import { TiSocialGooglePlus } from 'react-icons/ti';
 import './nav.css';
+import { logout } from '../../redux/user/userSlice';
 
 const adminLinks = [
   { id: 1, path: '/doctors', text: 'Doctors' },
@@ -16,7 +17,7 @@ const adminLinks = [
 ];
 
 const SocialMedia = () => (
-  <div className="mt-[4rem] md:mt-[9rem]">
+  <div className="mt-[2rem] md:mt-[9rem]">
     <div className="flex justify-center items-center text-[18px] text-gray-700 gap-1 font-medium mb-2">
       <FaTwitter />
       <FaFacebookF />
@@ -32,6 +33,8 @@ const SocialMedia = () => (
 
 const SideNav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -41,6 +44,11 @@ const SideNav = () => {
     if (window.innerWidth <= 768) {
       setIsOpen(false);
     }
+  };
+
+  const handleLogout = () => {
+    dispatch(logout);
+    navigate('/login');
   };
 
   return (
@@ -57,6 +65,9 @@ const SideNav = () => {
               </NavLink>
             </li>
           ))}
+          <button type="button" className="d:flex md:flex-col md:items-end hover:bg-lime-500 py-2 px-4 text-[#000000] font-bold hover:text-white" onClick={handleLogout}>
+            LOGOUT
+          </button>
         </ul>
         <SocialMedia />
       </div>
@@ -77,6 +88,9 @@ const SideNav = () => {
                 </NavLink>
               </li>
             ))}
+            <button type="button" className="bg-lime-500 py-2 px-4 text-[#000000] font-bold hover:text-white" onClick={handleLogout}>
+              LOGOUT
+            </button>
             <SocialMedia />
           </ul>
         </div>
