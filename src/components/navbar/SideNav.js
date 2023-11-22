@@ -45,7 +45,7 @@ const SideNav = () => {
       setIsOpen(false);
     }
   };
-//handlelogout
+
   const handleLogout = () => {
     dispatch(logout);
     localStorage.removeItem('user_id');
