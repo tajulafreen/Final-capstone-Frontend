@@ -39,7 +39,6 @@ const userSlice = createSlice({
         state.status = 'succeeded';
         state.user = action.payload;
       })
-      
       .addCase(signInUser.fulfilled, (state, action) => {
         state.status = 'succeeded';
         console.log(action.payload.status.data.id);
