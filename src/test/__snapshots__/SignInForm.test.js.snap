@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignInForm Component renders SignInForm component 1`] = `
+<div
+  class="flex flex-col justify-center items-center mt-[7rem]"
+>
+  <h1>
+    Doctor Appointment
+  </h1>
+  <form
+    class="bg-[#F5EEC8] rounded-md shadow py-[7rem] px-[3rem] mt-7"
+  >
+    <div
+      class=""
+    >
+      <input
+        class="w-[100%] text-[#FCF5ED] first-letter:text-[16px] rounded-md py-[.7rem] px-[1.5rem] mb-4 border-none"
+        id="name"
+        name="name"
+        placeholder="Enter your name"
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+    <button
+      class="bg-lime-500 w-[100%] hover:bg-[#0F0F0F] font-bold px-3 py-1 rounded-md text-white"
+      type="submit"
+    >
+      Sign In
+    </button>
+  </form>
+  <p
+    class="mt-1 font-bold"
+  >
+    Don't have an account?
+     
+    <a
+      class="no-underline text-black"
+      href="/"
+    >
+      Click here to sign_up
+    </a>
+  </p>
+</div>
+`;
