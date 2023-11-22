@@ -2,13 +2,13 @@
 
 exports[`SideNav Component renders SideNav component 1`] = `
 <div
-  class="border-r-2 h-screen"
+  class="menu-bar close-btn"
 >
   <div
-    class="w-200"
+    class="hidden md:block fixed h-screen bg-white md:border-r md:border-gray-300"
   >
     <ul
-      class="flex flex-col justify-center items-end gap-2 mt-[10rem] space-y-2"
+      class="md:flex md:flex-col md:items-end font-bold uppercase md:gap-4 mt-[10rem]"
     >
       <li>
         <a
@@ -50,15 +50,20 @@ exports[`SideNav Component renders SideNav component 1`] = `
           Delete Doctor
         </a>
       </li>
+      <button
+        class="d:flex md:flex-col md:items-end hover:bg-lime-500 py-2 px-4 text-gray-800 font-bold hover:text-white"
+        type="button"
+      >
+        LOGOUT
+      </button>
     </ul>
     <div
-      class="absolute bottom-0 start-0 w-full"
+      class="mt-[10rem] md:mt-[9rem]"
     >
       <div
-        class="flex gap-3 p-3"
+        class="flex justify-center items-center text-[18px] text-gray-700 gap-3 font-medium "
       >
         <svg
-          class="text-gray-700"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -72,7 +77,6 @@ exports[`SideNav Component renders SideNav component 1`] = `
           />
         </svg>
         <svg
-          class="text-gray-700"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -86,7 +90,6 @@ exports[`SideNav Component renders SideNav component 1`] = `
           />
         </svg>
         <svg
-          class="text-gray-700"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -101,7 +104,6 @@ exports[`SideNav Component renders SideNav component 1`] = `
           />
         </svg>
         <svg
-          class="text-gray-700"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -115,7 +117,6 @@ exports[`SideNav Component renders SideNav component 1`] = `
           />
         </svg>
         <svg
-          class="text-gray-700"
           fill="currentColor"
           height="1em"
           stroke="currentColor"
@@ -131,12 +132,31 @@ exports[`SideNav Component renders SideNav component 1`] = `
       </div>
       <div>
         <p
-          class="text-sm ps-5"
+          class="text-gray-800 font-medium text-[18px] text-center mt-1"
         >
-          © 2023
+          ©Copyright 2023
         </p>
       </div>
     </div>
   </div>
+  <button
+    class="menu-icon text-[#DADDB1] mb-6"
+    type="button"
+  >
+    <svg
+      class="open"
+      fill="currentColor"
+      height="1em"
+      stroke="currentColor"
+      stroke-width="0"
+      viewBox="0 0 448 512"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+      />
+    </svg>
+  </button>
 </div>
 `;

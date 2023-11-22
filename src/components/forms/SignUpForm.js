@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { signUpUser } from '../../redux/user/userSlice';
 
 const SignUpForm = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [name, setName] = useState('');
 
   const handleSignUp = async (e) => {
@@ -14,9 +14,8 @@ const SignUpForm = () => {
     try {
       await dispatch(signUpUser({ name }));
       setName('');
-      navigate('/doctors');
     } catch (error) {
-      console.error('Sign Up Error:', error);
+      toast.error('Sign Up Error:', error);
     }
   };
 

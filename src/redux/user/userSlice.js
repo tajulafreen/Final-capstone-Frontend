@@ -1,10 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 export const signUpUser = createAsyncThunk('user/signUp', async (userData) => {
   try {
     const response = await axios.post('http://localhost:3000/sign_up', userData);
-    alert('User Created Successfully');
+    toast.success('User created successfully');
     return response.data;
   } catch (error) {
     throw error.response.data;

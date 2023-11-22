@@ -1,5 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
+import { toast } from 'react-toastify';
 import axios from 'axios';
 
 const url = 'http://127.0.0.1:3000/api/v1';
@@ -21,6 +21,7 @@ export const createReservation = createAsyncThunk('reservations/createReservatio
     thunkAPI.dispatch(fetchReservations());
     return response.data;
   } catch (error) {
+    toast.warn(error.response.data);
     return thunkAPI.rejectWithValue(error.response.data);
   }
 });

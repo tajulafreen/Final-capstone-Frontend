@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { useLocation } from 'react-router';
 import { createReservation } from '../../redux/reservation/thunk';
 import { fetchDoctors } from '../../redux/doctor/doctorSlice';
@@ -25,7 +26,7 @@ const NewReservation = () => {
     e.preventDefault();
 
     if (!userId) {
-      console.error('User ID is not available. Please login and try again.');
+      toast.error('User ID is not available. Please login and try again.');
       return;
     }
 
@@ -43,11 +44,12 @@ const NewReservation = () => {
       setDoctorId('');
       setCity('');
       setDate('');
+      toast.success('Doctor added successfully');
     } catch (err) {
       setError('Error creating a reservation. Please try again later.');
-    } finally {
-      setIsLoading(false);
+      toast.error('Please fill all fields before you submit');
     }
+    setIsLoading(false);
   };
 
   useEffect(() => {

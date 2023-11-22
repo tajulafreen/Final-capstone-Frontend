@@ -48,6 +48,7 @@ const SideNav = () => {
 
   const handleLogout = () => {
     dispatch(logout);
+    localStorage.removeItem('user_id');
     navigate('/login');
   };
 
