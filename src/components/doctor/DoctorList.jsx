@@ -29,7 +29,6 @@ const DoctorList = () => {
     }
   };
 
-  
   useEffect(() => {
     dispatch(fetchDoctors());
   }, [dispatch]);
