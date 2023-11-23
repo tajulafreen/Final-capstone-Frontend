@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 
 export const signUpUser = createAsyncThunk('user/signUp', async (userData) => {
   try {
-    const response = await axios.post('http://localhost:3000/sign_up', userData);
+    const response = await axios.post('https://doctor-appointment-wk9j.onrender.com/sign_up', userData);
     toast.success('User created successfully');
     return response.data;
   } catch (error) {
@@ -13,7 +13,7 @@ export const signUpUser = createAsyncThunk('user/signUp', async (userData) => {
 });
 export const signInUser = createAsyncThunk('user/signIn', async (userData) => {
   try {
-    const response = await axios.post('http://localhost:3000/login', userData);
+    const response = await axios.post('https://doctor-appointment-wk9j.onrender.com/login', userData);
     console.log(response.data);
     return response.data;
   } catch (error) {
