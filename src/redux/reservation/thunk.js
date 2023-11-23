@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import axios from 'axios';
 
-const url = 'http://127.0.0.1:3000/api/v1';
+const url = 'https://doctor-appointment-wk9j.onrender.com/api/v1';
 
 export const fetchReservations = createAsyncThunk('reservations/fetchReservations', async (userId, thunkAPI) => {
   try {
