@@ -56,8 +56,7 @@ It's an Online Doctor Reservation web application designed to provide users with
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-- This is 'Book Doctor'<a href="">Live Demo Link</a>
+- This is 'Doctor Appointment-React app'<a href="https://doctor-appointment-eqlq.onrender.com/">Live Demo Link</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
