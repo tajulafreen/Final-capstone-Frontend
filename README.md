@@ -29,7 +29,7 @@
 
 # Final-capstone-Frontend <a name="about-project"></a>
 
-It's an Online Doctor Reservation web application designed to provide users with the ability to reserve, view, and manage doctors and doctor appointment reservation . The system aims to streamline the process of finding and booking doctors from various locations
+The Doctor Appointment - is an Online Doctor Reservation web application designed to provide users with the ability to reserve, view, and manage doctors and doctor appointment reservation . The system aims to streamline the process of finding and booking doctors from various locations
 
 #### Link to [Backend](https://github.com/tajulafreen/Final-capstone-Backend/pull/23)
 
