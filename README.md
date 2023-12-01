@@ -31,7 +31,7 @@
 
 It's an Online Doctor Reservation web application designed to provide users with the ability to reserve, view, and manage doctors and doctor appointment reservation . The system aims to streamline the process of finding and booking doctors from various locations
 
-#### Link to [Backend](https://github.com/tajulafreen/Final-capstone-Backend/pull/23)
+#### Link to [Backend](https://github.com/tajulafreen/Final-capstone-Backend)
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -57,7 +57,7 @@ It's an Online Doctor Reservation web application designed to provide users with
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- This is 'Book Doctor'<a href="">Live Demo Link</a>
+- This is 'Book Doctor'<a href="https://doctor-appointment-eqlq.onrender.com">Live Demo Link</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
